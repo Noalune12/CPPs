@@ -1,5 +1,5 @@
-#ifndef CONTACH_HPP
-# define CONTACH_HPP
+#ifndef CONTACH_H
+# define CONTACH_H
 
 #include <iostream>
 
