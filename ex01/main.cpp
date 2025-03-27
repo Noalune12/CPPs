@@ -3,6 +3,43 @@
 
 #include "PhoneBook.hpp"
 
+void	search_contact(const PhoneBook &phonebook)
+{
+	int index;
+	int contact_found = 0;
+	std::string input;
+
+	index = phonebook.getIndex();
+	if (index== 0)
+	{
+		std::cout << "No contacts available, please add one before searching" << std::endl;
+		return ;
+	}
+	while (contact_found == 0 || input.length() == 0)
+	{
+		std::cout << "Which contact are you searching : ";
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout << "Exiting program" << std::endl;
+			exit(0);
+		}
+		if (input.length() == 0)
+			std::cout << "Nothing was entered" << std::endl;
+		else if (input.length() > 1 || !isdigit(input[0]))
+			std::cout << "You should enter a number between 1 and " << phonebook.getIndex() << std::endl;
+		else if (input.length() == 1)
+		{
+			index = input[0] - '0';
+			if (index < 1 || index > phonebook.getIndex())
+				std::cout << "You should enter a number between 1 and " << phonebook.getIndex() << std::endl;
+			else
+				contact_found = 1;
+		}
+	}
+	std::cout << "First name: " << phonebook.contacts[index - 1].getFirstName() << std::endl;
+}
+
 void	print_contact(const PhoneBook &phonebook)
 {
 	for (int i = 0; i < phonebook.getIndex() ; i++)
@@ -76,6 +113,8 @@ int	main(void)
 			add_contact(&phonebook);
 		else if (arg=="PRINT")
 			print_contact(phonebook);
+		else if (arg == "SEARCH")
+			search_contact(phonebook);
 		else
 			std::cout << "Invalid command" << std::endl;
 	}
