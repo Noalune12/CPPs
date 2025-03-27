@@ -62,7 +62,7 @@ int	main(void)
 {
 	std::string	arg;
 	PhoneBook	phonebook;
-	int	index;
+	// int	index;
 
 	while (1)
 	{
@@ -73,10 +73,9 @@ int	main(void)
 		if (arg == "EXIT" || std::cin.eof())
 			break ;
 		else if (arg == "ADD")
-		{
 			add_contact(&phonebook);
+		else if (arg=="PRINT")
 			print_contact(phonebook);
-		}
 		else
 			std::cout << "Invalid command" << std::endl;
 	}

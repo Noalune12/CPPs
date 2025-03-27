@@ -3,11 +3,13 @@
 
 #include "Contact.hpp"
 
+# define MAX_CONTACTS 3
+
 class PhoneBook {
 
 	public:
 
-		Contact	contacts[8];
+		Contact	contacts[MAX_CONTACTS];
 		PhoneBook(void);
 		~PhoneBook(void);
 

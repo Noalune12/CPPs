@@ -16,9 +16,36 @@ int	PhoneBook::getIndex(void) const {
 	return (_index);
 }
 
+int	find_oldest_contact(PhoneBook *phonebook)
+{
+	time_t	oldest_time = phonebook->contacts[0].getCreationTime();
+	int	oldest_index = 0;
+
+	for (int i = 1; i < phonebook->getIndex(); i++)
+	{
+		if (phonebook->contacts[i].getCreationTime() < oldest_time)
+		{
+			oldest_time = phonebook->contacts[i].getCreationTime();
+			oldest_index = i;
+		}
+	}
+	return (oldest_index);
+}
+
+
 void	PhoneBook::AddContact(std::string firstName, std::string lastName, std::string nickName,
 	std::string phoneNumber, std::string darkestSecret) {
-	contacts[_index].setContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
-	_index++;
+	int	oldest_index;
+
+	if (_index < MAX_CONTACTS)
+	{
+		contacts[_index].setContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
+		_index++;
+	}
+	else
+	{
+		oldest_index = find_oldest_contact(this);
+		contacts[oldest_index].setContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
+	}
 	return;
 }
