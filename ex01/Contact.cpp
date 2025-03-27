@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "Contact.hpp"
 
 Contact::Contact(void) {
@@ -12,8 +10,10 @@ Contact::~Contact(void) {
 	return;
 }
 
-void	Contact::setId(int *id) {
+void	Contact::setContact(int *id, std::string firstName, std::string lastName) {
 	this->id = *id;
 	(*id)++;
+	this->firstName = firstName;
+	this->lastName = lastName;
 	return;
 }

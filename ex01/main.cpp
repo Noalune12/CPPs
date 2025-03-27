@@ -6,12 +6,20 @@ int	main(void)
 {
 	Contact contact;
 	Contact contact2;
+	std::string firstName = "Lou";
+	std::string lastName = "BUISSON";
+	std::string firstName2 = "Elvis";
+	std::string lastName2 = "Presley";
 	int	id = 0;
 
 	std::cout << "This will be a phonebook" << std::endl;
-	contact.setId(&id);
+	contact.setContact(&id, firstName, lastName);
 	std::cout << "Contact id: " << contact.id << std::endl;
-	contact2.setId(&id);
+	std::cout << "Contact first name: " << contact.firstName << std::endl;
+	std::cout << "Contact last name: " << contact.lastName << std::endl;
+	contact2.setContact(&id, firstName2, lastName2);
 	std::cout << "Contact2 id: " << contact2.id << std::endl;
+	std::cout << "Contact2 first name: " << contact2.firstName << std::endl;
+	std::cout << "Contact2 last name: " << contact2.lastName << std::endl;
 	return 0;
 }

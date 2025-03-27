@@ -1,16 +1,20 @@
 #ifndef CONTACH_HPP
 # define CONTACH_HPP
 
+#include <iostream>
+
 class Contact {
 
 	public:
 
-		int	id;
-
 		Contact(void);
 		~Contact(void);
 
-		void	setId(int *id);
+		int	id;
+		std::string	firstName;
+		std::string	lastName;
+
+		void	setContact(int *id, std::string firstName, std::string lastName);
 };
 
 #endif
