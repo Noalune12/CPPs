@@ -1,7 +1,45 @@
 #include <iostream>
 #include <cstdlib>
+#include <iomanip>
 
 #include "PhoneBook.hpp"
+
+void	print_contact(const Contact &Contact, int index)
+{
+	std::string	firstName;
+	std::string	lastName;
+	std::string	nickName;
+
+	firstName = Contact.getFirstName();
+	lastName = Contact.getLastName();
+	nickName = Contact.getNickname();
+
+	std::cout << std::setw(10) << std::right << index << " | ";
+	if (firstName.length() > 10)
+		firstName = firstName.substr(0, 9) + ".";
+	if (lastName.length() > 10)
+		lastName = lastName.substr(0, 9) + ".";
+	if (nickName.length() > 10)
+		nickName = nickName.substr(0, 9) + ".";
+	std::cout << std::setw(10) << std::right << firstName << " | ";
+	std::cout << std::setw(10) << std::right << lastName << " | ";
+	std::cout << std::setw(10) << std::right << nickName << std::endl;
+}
+
+void	print_all_contact(const PhoneBook &phonebook)
+{
+	for (int i = 0; i < phonebook.getIndex() ; i++)
+	{
+		std::cout << "         " << i + 1 << "    |    ";
+		std::cout << phonebook.contacts[i].getFirstName() << "    |    ";
+		std::cout << phonebook.contacts[i].getLastName() << "    |    ";
+		std::cout << phonebook.contacts[i].getNickname() <<  "    |    ";
+		std::cout << phonebook.contacts[i].getPhoneNumber() <<  "    |    ";
+		std::cout << phonebook.contacts[i].getDarkestSecret() << "    |    ";
+		std::cout << phonebook.contacts[i].getCreationTime() << std::endl;
+	}
+}
+
 
 void	search_contact(const PhoneBook &phonebook)
 {
@@ -37,21 +75,7 @@ void	search_contact(const PhoneBook &phonebook)
 				contact_found = 1;
 		}
 	}
-	std::cout << "First name: " << phonebook.contacts[index - 1].getFirstName() << std::endl;
-}
-
-void	print_contact(const PhoneBook &phonebook)
-{
-	for (int i = 0; i < phonebook.getIndex() ; i++)
-	{
-		std::cout << "         " << i + 1 << "    |    ";
-		std::cout << phonebook.contacts[i].getFirstName() << "    |    ";
-		std::cout << phonebook.contacts[i].getLastName() << "    |    ";
-		std::cout << phonebook.contacts[i].getNickname() <<  "    |    ";
-		std::cout << phonebook.contacts[i].getPhoneNumber() <<  "    |    ";
-		std::cout << phonebook.contacts[i].getDarkestSecret() << "    |    ";
-		std::cout << phonebook.contacts[i].getCreationTime() << std::endl;
-	}
+	print_contact(phonebook.contacts[index - 1], index);
 }
 
 std::string	get_user_info(std::string str)
@@ -111,8 +135,6 @@ int	main(void)
 			break ;
 		else if (arg == "ADD")
 			add_contact(&phonebook);
-		else if (arg=="PRINT")
-			print_contact(phonebook);
 		else if (arg == "SEARCH")
 			search_contact(phonebook);
 		else
