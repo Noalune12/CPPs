@@ -11,3 +11,9 @@ Contact::~Contact(void) {
 	std::cout << "Contact desctructor called" << std::endl;
 	return;
 }
+
+void	Contact::setId(int *id) {
+	this->id = *id;
+	(*id)++;
+	return;
+}
