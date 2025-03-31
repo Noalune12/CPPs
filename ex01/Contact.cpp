@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lbuisson <lbuisson@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/31 15:16:00 by lbuisson          #+#    #+#             */
+/*   Updated: 2025/03/31 15:16:02 by lbuisson         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.hpp"
 
 Contact::Contact(void) {
@@ -22,22 +34,18 @@ void	Contact::setContact(std::string firstName, std::string lastName,	std::strin
 }
 
 std::string	Contact::getFirstName(void) const {
-	// std::cout << "First name: " << _firstName << std::endl;
 	return (_firstName);
 }
 
 std::string	Contact::getLastName(void) const {
-	// std::cout << "Last name: " << _lastName << std::endl;
 	return (_lastName);
 }
 
 std::string	Contact::getNickname(void) const {
-	// std::cout << "Nick name: " << _nickName << std::endl;
 	return (_nickName);
 }
 
 std::string	Contact::getPhoneNumber(void) const {
-	// std::cout << "Phone number: " << _phoneNumber << std::endl;
 	return (_phoneNumber);
 }
 

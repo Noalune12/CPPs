@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lbuisson <lbuisson@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/31 15:18:16 by lbuisson          #+#    #+#             */
+/*   Updated: 2025/03/31 15:18:17 by lbuisson         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook(void) {
@@ -12,7 +24,6 @@ PhoneBook::~PhoneBook(void) {
 }
 
 int	PhoneBook::getIndex(void) const {
-	// std::cout << "Index: " << _index << std::endl;
 	return (_index);
 }
 
