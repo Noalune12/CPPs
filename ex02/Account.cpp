@@ -1,6 +1,19 @@
-#include "Account.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lbuisson <lbuisson@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/31 15:20:33 by lbuisson          #+#    #+#             */
+/*   Updated: 2025/03/31 15:20:34 by lbuisson         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <ctime>
+
+#include "Account.hpp"
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -38,11 +51,6 @@ int	Account::getNbDeposits(void) {
 int	Account::getNbWithdrawals(void) {
 	return (_totalNbWithdrawals);
 }
-
-// annee mois jour _ heure minute seconde
-// time get the time in second since 1970
-// tm->tm_year year since 1900, need to add 1900 to get the real year.
-// tm->tm_mon index of month so +1.
 
 void	Account::_displayTimestamp(void)
 {
