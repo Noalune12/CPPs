@@ -1,12 +1,17 @@
-#include <iostream>
-#include <cctype> // toupper
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lbuisson <lbuisson@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/31 15:14:46 by lbuisson          #+#    #+#             */
+/*   Updated: 2025/03/31 15:14:47 by lbuisson         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
 
-/* std::cout = object that allow to have access to the writing console / represent the output stream
-	std = namespace with functions, objects and classes
-	:: = operator that allow to have access to what is inside std
-	cout = object (output stream)
-<< : insertion operator that send data to std::cout, handle data stream
-std::endl = inserts a newline character into the output sequence and fluch (empty buffer where data is stocked before writing)*/
+#include <iostream>
+#include <cctype>
 
 int	main(int ac, char **av)
 {
