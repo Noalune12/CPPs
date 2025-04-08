@@ -1,7 +1,7 @@
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 NAME = zombie
-SRC = main.cpp
+SRC = main.cpp Zombie.cpp
 OBJDIR = objs
 OBJS = $(patsubst %.cpp,$(OBJDIR)/%.o,$(SRC))
 
