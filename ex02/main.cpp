@@ -2,15 +2,18 @@
 #include <string>
 
 int	main(void) {
-	int	nb = 42;
-	int* nbptr = &nb;
-	int& nbref = nb; // cannot change what the ref point to
+	std::string	str = "HI THIS IS BRAIN";
+	std::string* strPtr = &str;
+	std::string& strRef = str;
 
-	std::cout << nb << " " << *nbptr << " " << nbref << std::endl;
-
-	*nbptr = 21;
-	std::cout << nb << std::endl;
-	nbref = 84;
-	std::cout << nb << std::endl;
+	std::cout << "--- MEMORY ADDRESS ---" << std::endl;
+	std::cout << "str = " << &str << std::endl;
+	std::cout << "strPtr = " << strPtr << std::endl;
+	std::cout << "strRef = " << &strRef << std::endl;
+	std::cout << std::endl;
+	std::cout << "--- STRING VALUE ---" << std::endl;
+	std::cout << "str = " << str << std::endl;
+	std::cout << "strPtr = " << *strPtr << std::endl;
+	std::cout << "strRef = " << strRef << std::endl;
 	return (0);
 }
