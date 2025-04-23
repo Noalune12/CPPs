@@ -6,15 +6,14 @@
 /*   By: lbuisson <lbuisson@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 15:14:46 by lbuisson          #+#    #+#             */
-/*   Updated: 2025/03/31 15:14:47 by lbuisson         ###   ########lyon.fr   */
+/*   Updated: 2025/04/23 09:18:18 by lbuisson         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cctype>
 
-int	main(int ac, char **av)
-{
+int	main(int ac, char **av) {
 	if (ac == 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	else

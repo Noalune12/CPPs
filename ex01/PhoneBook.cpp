@@ -6,9 +6,11 @@
 /*   By: lbuisson <lbuisson@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 15:18:16 by lbuisson          #+#    #+#             */
-/*   Updated: 2025/04/23 08:02:09 by lbuisson         ###   ########lyon.fr   */
+/*   Updated: 2025/04/23 09:28:08 by lbuisson         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <iostream>
 
 #include "PhoneBook.hpp"
 
@@ -27,8 +29,7 @@ int	PhoneBook::getIndex(void) const {
 	return (_index);
 }
 
-int	find_oldest_contact(PhoneBook *phonebook)
-{
+int	find_oldest_contact(PhoneBook *phonebook) {
 	time_t	oldest_time = phonebook->contacts[0].getCreationTime();
 	int	oldest_index = 0;
 

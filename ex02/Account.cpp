@@ -6,7 +6,7 @@
 /*   By: lbuisson <lbuisson@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 15:20:33 by lbuisson          #+#    #+#             */
-/*   Updated: 2025/04/23 08:09:25 by lbuisson         ###   ########lyon.fr   */
+/*   Updated: 2025/04/23 09:18:50 by lbuisson         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void Account::displayStatus(void) const {
 		<< ";deposits:" << _nbDeposits << ";withdrawals:" << _nbWithdrawals << std::endl;
 }
 
-void	Account::makeDeposit( int deposit ) {
+void	Account::makeDeposit(int deposit) {
 	_totalAmount += deposit;
 	_totalNbDeposits += 1;
 	_nbDeposits += 1;
@@ -84,7 +84,7 @@ void	Account::makeDeposit( int deposit ) {
 	_amount += deposit;
 }
 
-bool	Account::makeWithdrawal( int withdrawal ) {
+bool	Account::makeWithdrawal(int withdrawal) {
 	_amount -= withdrawal;
 	if (checkAmount() == 0)
 	{
@@ -104,7 +104,7 @@ bool	Account::makeWithdrawal( int withdrawal ) {
 	return (true);
 }
 
-int		Account::checkAmount( void ) const {
+int		Account::checkAmount(void) const {
 	if (_amount < 0)
 		return (0);
 	return (1);

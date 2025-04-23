@@ -6,12 +6,13 @@
 /*   By: lbuisson <lbuisson@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 15:19:05 by lbuisson          #+#    #+#             */
-/*   Updated: 2025/03/31 15:19:15 by lbuisson         ###   ########lyon.fr   */
+/*   Updated: 2025/04/23 09:28:53 by lbuisson         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iomanip>
 #include <cstdlib>
+#include <iostream>
 
 #include "PhoneBook.hpp"
 

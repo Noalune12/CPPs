@@ -6,14 +6,14 @@
 /*   By: lbuisson <lbuisson@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 15:16:04 by lbuisson          #+#    #+#             */
-/*   Updated: 2025/03/31 15:16:05 by lbuisson         ###   ########lyon.fr   */
+/*   Updated: 2025/04/23 10:40:31 by lbuisson         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACH_H
 # define CONTACH_H
 
-#include <iostream>
+#include <string>
 #include <ctime>
 
 class Contact {
@@ -22,9 +22,6 @@ class Contact {
 
 		Contact(void);
 		~Contact(void);
-
-		std::string	firstName;
-		std::string	lastName;
 
 		void		setContact(std::string firstName, std::string lastName,	std::string nickName,
 				std::string phoneNumber, std::string darkestSecret);
