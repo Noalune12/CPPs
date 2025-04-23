@@ -6,7 +6,7 @@
 /*   By: lbuisson <lbuisson@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 15:20:33 by lbuisson          #+#    #+#             */
-/*   Updated: 2025/04/02 15:51:46 by lbuisson         ###   ########lyon.fr   */
+/*   Updated: 2025/04/23 08:09:25 by lbuisson         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,37 +52,13 @@ int	Account::getNbWithdrawals(void) {
 	return (_totalNbWithdrawals);
 }
 
-void	Account::_displayTimestamp(void)
-{
+void	Account::_displayTimestamp(void) {
 	char	timestamp_final[19];
 	std::time_t now;
 	std::time(&now);
 	std::tm *timestamp = std::localtime(&now);
 	std::strftime(timestamp_final, sizeof(timestamp_final), "[%Y%m%d_%H%M%S] ", timestamp);
 	std::cout << timestamp_final << std::flush;
-	// std::cout << "[" << timestamp->tm_year + 1900 << std::flush;
-	// if (timestamp->tm_mon + 1 < 10)
-	// 	std::cout << "0" << timestamp->tm_mon + 1 << std::flush;
-	// else
-	// 	std::cout << timestamp->tm_mon + 1 << std::flush;
-	// if (timestamp->tm_mday < 10)
-	// 	std::cout << "0" << timestamp->tm_mday << std::flush;
-	// else
-	// 	std::cout << timestamp->tm_mday << std::flush;
-	// std::cout << "_" << std::flush;
-	// if (timestamp->tm_hour < 10)
-	// 	std::cout << "0" << timestamp->tm_hour << std::flush;
-	// else
-	// 	std::cout << timestamp->tm_hour << std::flush;
-	// if (timestamp->tm_min < 10)
-	// 	std::cout << "0" << timestamp->tm_min << std::flush;
-	// else
-	// 	std::cout << timestamp->tm_min << std::flush;
-	// if (timestamp->tm_sec < 10)
-	// 	std::cout << "0" << timestamp->tm_sec << std::flush;
-	// else
-	// 	std::cout << timestamp->tm_sec << std::flush;
-	// std::cout << "] " << std::flush;
 }
 
 void	Account::displayAccountsInfos(void) {
