@@ -1,6 +1,6 @@
 # EX00
 - std::cout = object that allow to have access to the writing console / represent the output stream
-	- std = namespace with functions, objects and classes
+	- std = namespace that contains the names and identifiers of standard library components like data types, functions, objects and classes
 	- :: = operator that allow to have access to what is inside std
 	- cout = object (output stream)
 - << : insertion operator that send data to std::cout, handle data stream
