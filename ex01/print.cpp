@@ -6,7 +6,7 @@
 /*   By: lbuisson <lbuisson@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 15:19:05 by lbuisson          #+#    #+#             */
-/*   Updated: 2025/04/23 09:28:53 by lbuisson         ###   ########lyon.fr   */
+/*   Updated: 2025/04/24 10:00:30 by lbuisson         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,15 @@ void	get_contact_index(const PhoneBook &phonebook, int *index) {
 	}
 }
 
+void	print_single_contact(const Contact &Contact, int index) {
+	std::cout << "Contact " << index << std::endl;
+	std::cout << "First Name : " << Contact.getFirstName() << std::endl;
+	std::cout << "Last Name : " << Contact.getLastName() << std::endl;
+	std::cout << "Nickname  : " << Contact.getNickname() << std::endl;
+	std::cout << "Phone Number : " << Contact.getPhoneNumber() << std::endl;
+	std::cout << "Darkest Secret : " << Contact.getDarkestSecret() << std::endl;
+}
+
 void	search_contact(const PhoneBook &phonebook) {
 	int index = phonebook.getIndex();
 
@@ -78,6 +87,5 @@ void	search_contact(const PhoneBook &phonebook) {
 	print_all_contact(phonebook);
 	std::cout << std::endl;
 	get_contact_index(phonebook, &index);
-	print_contact(phonebook.contacts[index - 1], index);
-	std::cout << std::endl;
+	print_single_contact(phonebook.contacts[index - 1], index);
 }
