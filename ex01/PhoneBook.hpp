@@ -6,7 +6,7 @@
 /*   By: lbuisson <lbuisson@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 15:18:39 by lbuisson          #+#    #+#             */
-/*   Updated: 2025/03/31 15:18:40 by lbuisson         ###   ########lyon.fr   */
+/*   Updated: 2025/04/28 17:51:23 by lbuisson         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,18 @@ class PhoneBook {
 
 	public:
 
-		Contact	contacts[MAX_CONTACTS];
 		PhoneBook(void);
 		~PhoneBook(void);
 
-		void		AddContact(std::string firstName, std::string lastName,	std::string nickName,
-			std::string phoneNumber, std::string darkestSecret);
-		int	getIndex(void) const;
+		bool	addContact();
+		bool	searchContact();
 
 	private:
 
+		Contact	contacts[MAX_CONTACTS];
 		int		_index;
+		int		_maxIndex;
 };
 
-void	search_contact(const PhoneBook &phonebook);
 
 #endif

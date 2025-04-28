@@ -6,11 +6,14 @@
 /*   By: lbuisson <lbuisson@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 15:16:00 by lbuisson          #+#    #+#             */
-/*   Updated: 2025/04/23 09:28:35 by lbuisson         ###   ########lyon.fr   */
+/*   Updated: 2025/04/28 17:23:26 by lbuisson         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
+#include <iomanip>
+#include <cstdlib>
 
 #include "Contact.hpp"
 
@@ -24,37 +27,79 @@ Contact::~Contact(void) {
 	return;
 }
 
-void	Contact::setContact(std::string firstName, std::string lastName,	std::string nickName,
-	std::string phoneNumber, std::string darkestSecret) {
-	_firstName = firstName;
-	_lastName = lastName;
-	_nickName = nickName;
-	_phoneNumber = phoneNumber;
-	_darkestSecret = darkestSecret;
-	_creationTime = time(0);
-	return;
+bool Contact::setContact() {
+	int	count = 0;
+
+	while (count != 5) {
+		if (count == 0) {
+			std::cout << "Enter your first name : " << std::flush;
+			std::getline(std::cin, _firstName);
+			if (_firstName.empty())
+				std::cout << "Nothing was entered" << std::endl;
+			else
+				count++;
+		}
+		else if (count == 1) {
+			std::cout << "Enter your last name : " << std::flush;
+			std::getline(std::cin, _lastName);
+			if (_lastName.empty())
+				std::cout << "Nothing was entered" << std::endl;
+			else
+				count++;
+		}
+		else if (count == 2) {
+			std::cout << "Enter your nickname : " << std::flush;
+			std::getline(std::cin, _nickName);
+			if (_nickName.empty())
+				std::cout << "Nothing was entered" << std::endl;
+			else
+				count++;
+		}
+		else if (count == 3) {
+			std::cout << "Enter your phone number : " << std::flush;
+			std::getline(std::cin, _phoneNumber);
+			if (_phoneNumber.empty())
+				std::cout << "Nothing was entered" << std::endl;
+			else
+				count++;
+		}
+		else if (count == 4) {
+			std::cout << "Enter your darkest secret : " << std::flush;
+			std::getline(std::cin, _darkestSecret);
+			if (_darkestSecret.empty())
+				std::cout << "Nothing was entered" << std::endl;
+			else
+				count++;
+		}
+		if (std::cin.eof())
+			return (false);
+	}
+	return (true);
 }
 
-std::string	Contact::getFirstName(void) const {
-	return (_firstName);
+void Contact::printAll(int index) {
+	std::cout << " ___________________________________________________" << std::endl;
+	std::cout << "| "<< std::setw(10) << std::right << index + 1 << " | ";
+	if (_firstName.length() > 10)
+		std::cout << std::setw(10) << std::right << _firstName.substr(0, 9) + "." << " | ";
+	else
+		std::cout << std::setw(10) << std::right << _firstName << " | ";
+	if (_lastName.length() > 10)
+		std::cout << std::setw(10) << std::right << _lastName.substr(0, 9) + "." << " | ";
+	else
+		std::cout << std::setw(10) << std::right << _lastName << " | ";
+	if (_nickName.length() > 10)
+		std::cout << std::setw(10) << std::right << _nickName.substr(0, 9) + "." << " | " << std::endl;
+	else
+		std::cout << std::setw(10) << std::right << _nickName << " | " << std::endl;
 }
 
-std::string	Contact::getLastName(void) const {
-	return (_lastName);
+void Contact::printOne(int index) {
+	std::cout << "Contact " << index << std::endl;
+	std::cout << "First Name : " << _firstName << std::endl;
+	std::cout << "Last Name : " << _lastName << std::endl;
+	std::cout << "Nickname  : " << _nickName << std::endl;
+	std::cout << "Phone Number : " << _phoneNumber << std::endl;
+	std::cout << "Darkest Secret : " << _darkestSecret << std::endl;
 }
 
-std::string	Contact::getNickname(void) const {
-	return (_nickName);
-}
-
-std::string	Contact::getPhoneNumber(void) const {
-	return (_phoneNumber);
-}
-
-std::string Contact::getDarkestSecret(void) const {
-	return (_darkestSecret);
-}
-
-time_t Contact::getCreationTime(void) const {
-	return (_creationTime);
-}
