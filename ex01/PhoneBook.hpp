@@ -6,7 +6,7 @@
 /*   By: lbuisson <lbuisson@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 15:18:39 by lbuisson          #+#    #+#             */
-/*   Updated: 2025/04/28 17:51:23 by lbuisson         ###   ########lyon.fr   */
+/*   Updated: 2025/04/29 09:56:49 by lbuisson         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class PhoneBook {
 		~PhoneBook(void);
 
 		bool	addContact();
-		bool	searchContact();
+		bool	searchContact() const;
 
 	private:
 

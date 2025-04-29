@@ -6,7 +6,7 @@
 /*   By: lbuisson <lbuisson@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 15:16:04 by lbuisson          #+#    #+#             */
-/*   Updated: 2025/04/28 17:22:44 by lbuisson         ###   ########lyon.fr   */
+/*   Updated: 2025/04/29 10:02:05 by lbuisson         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class Contact {
 		~Contact(void);
 
 		bool	setContact();
-		void	printAll(int index);
-		void	printOne(int index);
+		void	printTable(int index) const;
+		void	printOne(int index) const;
 
 	private:
 
@@ -34,7 +34,6 @@ class Contact {
 		std::string		_nickName;
 		std::string		_phoneNumber;
 		std::string		_darkestSecret;
-		// time_t			_creationTime;
 };
 
 #endif

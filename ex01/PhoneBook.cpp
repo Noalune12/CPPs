@@ -6,7 +6,7 @@
 /*   By: lbuisson <lbuisson@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 15:18:16 by lbuisson          #+#    #+#             */
-/*   Updated: 2025/04/28 17:51:33 by lbuisson         ###   ########lyon.fr   */
+/*   Updated: 2025/04/29 10:07:11 by lbuisson         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,17 @@ PhoneBook::~PhoneBook(void) {
 }
 
 bool PhoneBook::addContact() {
-	if (_index == 8)
+	if (_index == MAX_CONTACTS)
 		_index = 0;
-	contacts[_index].setContact();
+	if (contacts[_index].setContact() == false)
+		return (false);
 	_index++;
-	if (_maxIndex < 8)
+	if (_maxIndex < MAX_CONTACTS)
 		_maxIndex++;
 	return (true);
 }
 
-bool PhoneBook::searchContact() {
+bool PhoneBook::searchContact() const {
 	std::string	input;
 	int			i;
 
@@ -46,7 +47,8 @@ bool PhoneBook::searchContact() {
 		return (true);
 	}
 	for (int i = 0; i < _maxIndex; i++)
-		contacts[i].printAll(i);
+		contacts[i].printTable(i);
+	std::cout << std::endl;
 	while (1) {
 		std::cout << "Which contact are you searching : " << std::flush;
 		std::getline(std::cin, input);
