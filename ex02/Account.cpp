@@ -6,7 +6,7 @@
 /*   By: lbuisson <lbuisson@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 15:20:33 by lbuisson          #+#    #+#             */
-/*   Updated: 2025/04/23 09:18:50 by lbuisson         ###   ########lyon.fr   */
+/*   Updated: 2025/04/29 15:08:58 by lbuisson         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	Account::_displayTimestamp(void) {
 
 void	Account::displayAccountsInfos(void) {
 	_displayTimestamp();
-	std::cout << "accounts:" << _nbAccounts << ";total:" << getTotalAmount()
+	std::cout << "accounts:" << getNbAccounts() << ";total:" << getTotalAmount()
 		<< ";deposits:" << getNbDeposits() << ";withdrawals:" << getNbWithdrawals() << std::endl;
 }
 
