@@ -6,7 +6,7 @@
 /*   By: lbuisson <lbuisson@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/31 15:18:39 by lbuisson          #+#    #+#             */
-/*   Updated: 2025/04/29 09:56:49 by lbuisson         ###   ########lyon.fr   */
+/*   Updated: 2025/04/29 10:35:11 by lbuisson         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class PhoneBook {
 
 	private:
 
-		Contact	contacts[MAX_CONTACTS];
+		Contact	_contacts[MAX_CONTACTS];
 		int		_index;
 		int		_maxIndex;
 };
