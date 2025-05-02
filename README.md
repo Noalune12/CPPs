@@ -27,7 +27,7 @@
 3. Interest pointer vs reference for human a vs human b
 
 
-###Ex04
+### Ex04
 - ifstream : input file stream + ifs() -> create file
 - ofstream : output file stream
 - concatenate filename + .replace by casting filename to std::string then to ofstream need to convert it back to const char* with .c_str()
