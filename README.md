@@ -24,3 +24,11 @@
 - used to modify _type
 - pass a reference -> no copy (more efficient), the function get directly the origin of the object
 - pass a value -> a new instance of the string is allocated in memory, the content of the string of origin is copied on the new instance, once the function is done, the copy is destroyed
+3. Interest pointer vs reference for human a vs human b
+
+
+###Ex04
+- ifstream : input file stream + ifs() -> create file
+- ofstream : output file stream
+- concatenate filename + .replace by casting filename to std::string then to ofstream need to convert it back to const char* with .c_str()
+- find -> if nothing is found npos is returned which is the highest value possible for a size_t -> index == std::string::npos means that the string was not found
