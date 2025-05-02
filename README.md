@@ -14,3 +14,13 @@
 - A pointer can be assigned NULL directly, whereas a reference cannot be.
 - We can have a pointer to pointer (known as a double pointer) offering extra levels of indirection, whereas references only offer one level of indirection. (int **q; // It is valid. VS int &&q = p; // It is reference to reference, so it is an error)
 - Reference = pass by value VS pointer = pass by reference (int &p = a VS int *p = &a)
+
+
+### Ex03
+1. Ref for getType
+- ref = club.getType(); // Get the value of _type but it makes a copie of the value
+- const std::string& ref = club.getType(); // Store the const reference and it does not make a copy
+2. setType
+- used to modify _type
+- pass a reference -> no copy (more efficient), the function get directly the origin of the object
+- pass a value -> a new instance of the string is allocated in memory, the content of the string of origin is copied on the new instance, once the function is done, the copy is destroyed
