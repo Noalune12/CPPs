@@ -35,26 +35,17 @@ void	Harl::complain( std::string level) {
 	};
 	int	index = 0;
 	while (index < 4) {
-		if (level.compare(levelName[index]) == 0)
+		if (level == levelName[index])
 			break ;
 		index++;
 	}
 	switch (index) {
 		case 0:
 			debug();
-			info();
-			warning();
-			error();
-			break;
 		case 1:
 			info();
-			warning();
-			error();
-			break;
 		case 2:
 			warning();
-			error();
-			break;
 		case 3:
 			error();
 			break;

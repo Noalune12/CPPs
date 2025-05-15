@@ -40,7 +40,7 @@ void	Harl::complain( std::string level) {
 		&Harl::error
 	};
 	for (int i = 0; i < 4; i++) {
-		if (level.compare(levelName[i]) == 0) {
+		if (level == levelName[i]) {
 			(this->*levelFunction[i])();
 			return ;
 		}

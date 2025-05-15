@@ -2,7 +2,7 @@
 
 Zombie* zombieHorde( int N, std::string name ) {
 	if (N <= 0) {
-		std::cout << "Error: N must be greater than 0." << std::endl;
+		std::cout << "Error: You can't create less than 0 zombie !" << std::endl;
 		return NULL;
 	}
 	Zombie* zombie = new Zombie[N];
