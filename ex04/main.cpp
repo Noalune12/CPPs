@@ -14,11 +14,11 @@ void	replaceString(std::ofstream &outfile, std::string line, std::string find, s
 }
 
 bool	getLastChar(std::ifstream &file) {
-	file.seekg(-1, std::ios::end); // go to the last caracter
+	file.seekg(-1, std::ios::end);
 	char lastChar;
-	file.get(lastChar); //get the last caracter
-	file.clear(); //reinit indicator of the file like EOF
-	file.seekg(0, std::ios::beg); //go back to beginning
+	file.get(lastChar);
+	file.clear();
+	file.seekg(0, std::ios::beg);
 	if (lastChar == '\n')
 		return (true);
 	return (false);
@@ -51,8 +51,8 @@ int main(int ac, char **av) {
 		return (1);
 	}
 
-	file.seekg(0, std::ios::end); //position at the end to get the len of the file with tellg
-	std::streampos length = file.tellg(); //return position of cursor (0 if empty)
+	file.seekg(0, std::ios::end);
+	std::streampos length = file.tellg();
 	if (length == 0)
 		return 0;
 	bool newLine = getLastChar(file);

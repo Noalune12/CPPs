@@ -34,3 +34,4 @@
 - concatenate filename + .replace by casting filename to std::string then to ofstream need to convert it back to const char* with .c_str()
 - find -> if nothing is found npos is returned which is the highest value possible for a size_t -> index == std::string::npos means that the string was not found
 - https://medium.com/@ryan_forrester_/file-handling-with-getline-in-c-a-comprehensive-guide-51555631b14f
+- `file.clear();` -> reinit indicator of stream state. For instance, if we go to the end of the file thie indicator `eofbit` is defined.

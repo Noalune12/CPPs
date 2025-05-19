@@ -10,7 +10,7 @@ HumanB::~HumanB() {
 	if (_weapon == NULL)
 		std::cout << RED << "Human B " << _name << " with no final weapon destructed" << RESET << std::endl;
 	else
-		std::cout << RED<< "Human B " << _name << " with final weapon " << _weapon->getType() << " destructed" << RESET << std::endl;
+		std::cout << RED<< "Human B " << _name << " with final weapon \"" << _weapon->getType() << "\" destructed" << RESET << std::endl;
 	};
 
 void	HumanB::attack() const {

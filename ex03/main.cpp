@@ -22,10 +22,5 @@ int main() {
 		club.setType("some other type of club");
 		jim.attack();
 	}
-	std::cout << std::endl;
-	{
-		HumanB yoyo("yoyo");
-		yoyo.attack();
-	}
 	return (0);
 }
