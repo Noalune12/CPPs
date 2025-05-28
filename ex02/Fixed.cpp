@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lbuisson <lbuisson@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/28 07:31:43 by lbuisson          #+#    #+#             */
+/*   Updated: 2025/05/28 07:37:37 by lbuisson         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 #include <iostream>
@@ -54,24 +66,24 @@ Fixed Fixed::operator/(Fixed const& rhs) const {
 	return this->toFloat() / rhs.toFloat();
 }
 Fixed&	Fixed::operator++( void ) {
-	_val++;
+	++_val;
 	return *this;
 }
 
 Fixed	Fixed::operator++( int ) {
 	Fixed temp = *this;
-	++_val; // or ++*this;
+	++_val;
 	return temp;
 }
 
 Fixed&	Fixed::operator--( void ) {
-	_val--;
+	--_val;
 	return *this;
 }
 
 Fixed	Fixed::operator--( int ) {
 	Fixed temp = *this;
-	--_val; // or --*this;
+	--_val;
 	return temp;
 }
 
