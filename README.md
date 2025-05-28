@@ -52,4 +52,4 @@
     2. longueur
     3. il peut etre represente par une fleche dans l'espace
     4. vecteur AB -> deplacement de A vers B
--
+- = operator with const -> not useful here because we are using const variable that have to be init at the construction of the object and won't be changed then and can't be assigned with this operator

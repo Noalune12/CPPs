@@ -14,13 +14,10 @@ Point::~Point ( void ) {
 
 Point::Point ( Point const& src ): _x(src._x), _y(src._y) {
 	// std::cout << "Point Copy constructor called" << std::endl;
-	// *this = src;
 }
 
 Point& Point::operator=(Point const& rhs) { //impossible because is const
 	// std::cout << "Point operator = called" << std::endl;
-	// ??????
-	// this->getX() = rhs.getX().getRawBits();
 	(void)rhs;
 	return *this;
 }

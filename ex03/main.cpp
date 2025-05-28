@@ -6,44 +6,60 @@ bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 int main( void ) {
 	{
-		std::cout << "---------- TEST POINT ----------" << std::endl << std::endl;
-		Point test;
-		std::cout << " test = " << test << std::endl << std::endl;
-		Point test2(1.02f, 2.05f);
-		std::cout << " test2 = " << test2 << std::endl << std::endl;
-		Point test3 = test2;
-		std::cout << " test3 = " << test3 << std::endl << std::endl;
-		Point test4(test2);
-		std::cout << " test4 = " << test4 << std::endl << std::endl;
-	}
-	{
 		std::cout << "---------- BSP ----------" << std::endl << std::endl;
-		// Point a(0, 0);
-		// Point b(10, 0);
-		// Point c(5, 10);
-		// Point point(-0.1f, -0.1f);
-		Point a(0, 0);
-		Point b(10, 0);
-		Point c(5.0f, 0.1f);
-		Point point(5.0f, 0.05f);
-		if (bsp(a, b, c, point) == true)
-			std::cout << "point -> " << point << " is inside the triangle" << std::endl;
-		else
-			std::cout << "point -> " << point << " is not inside the triangle" << std::endl;
+		{
+			Point a(0, 0);
+			Point b(0, 6);
+			Point c(3, 4);
+
+			std::cout << "---------- a (0,0) b(0,6) c(3,4) ----------" << std::endl;
+			{
+				Point point(1, 3);
+				std::cout << "point(1, 3)" << (bsp(a, b, c, point) ? " is inside " : " is outside ") << "the triangle" << std::endl;
+			}
+			{
+				Point point(0.05f, 2.5f);
+				std::cout << "point(0.05, 2.5)" << (bsp(a, b, c, point) ? " is inside " : " is outside ") << "the triangle" << std::endl;
+			}
+			{
+				Point point(0.05f, 6.5f);
+				std::cout << "point(0.05, 6.5)" << (bsp(a, b, c, point) ? " is inside " : " is outside ") << "the triangle" << std::endl;
+			}
+			{
+				std::cout << std::endl << "point on a border" << std::endl;
+				Point point(0, 6);
+				std::cout << "point(0.05, 6.5)" << (bsp(a, b, c, point) ? " is inside " : " is outside ") << "the triangle" << std::endl;
+			}
+			{
+				std::cout << std::endl << "point on a summit" << std::endl;
+				Point point(0, 3);
+				std::cout << "point(0.05, 6.5)" << (bsp(a, b, c, point) ? " is inside " : " is outside ") << "the triangle" << std::endl;
+			}
+		}
+		{
+			Point a(0.0f, 0.0f);
+			Point b(5.0f, 0.0f);
+			Point c(2.5f, 0.1f);
+			std::cout << "---------- a (0,0) b(5,0) c(2.5,0.1) ----------" << std::endl;
+			{
+				Point point(2.5f, 0.05f);
+				std::cout << "point(2.5, 0.05)" << (bsp(a, b, c, point) ? " is inside " : " is outside ") << "the triangle" << std::endl;
+			}
+		}
+		{
+			Point a(0, -5);
+			Point b(-3, 0);
+			Point c(-3, -3);
+			std::cout << "---------- a (0,-5) b(-3,0) c(-3,-3) ----------" << std::endl;
+			{
+				Point point(-2, -2);
+				std::cout << "point(-2, -2)" << (bsp(a, b, c, point) ? " is inside " : " is outside ") << "the triangle" << std::endl;
+			}
+			{
+				Point point(-4, -2);
+				std::cout << "point(-4, -2)" << (bsp(a, b, c, point) ? " is inside " : " is outside ") << "the triangle" << std::endl;
+			}
+		}
 	}
 	return 0;
 }
-
-
-/*
-
-
-	y
-x       . . . . . . . . .
-		. a x x x x b . .
-		. x . P . x . . .
-		. x . . x . . . .
-		. x . x . . . . .
-		. x x . . . . . .
-		. c . . . . . . .
-*/
