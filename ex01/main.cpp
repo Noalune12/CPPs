@@ -52,21 +52,24 @@ int	main( void ) {
 	std::cout << std::endl;
 	{
 		ScavTrap	Zeus("Zeus");
+		ScavTrap	ZeusCopy(Zeus);
 
 		std::cout << std::endl << "---------- ZEUS MAX REPAIR ----------" << std::endl << std::endl;
-		Zeus.beRepaired(4294967295);
-		Zeus.printStatus();
+		ZeusCopy.beRepaired(4294967295);
+		ZeusCopy.printStatus();
 		for (int i = 0; i < 49; i++)
-			Zeus.beRepaired(1);
-		Zeus.beRepaired(4294967146);
-		Zeus.printStatus();
-		Zeus.attack("Hades");
-		Zeus.guardGate();
+			ZeusCopy.beRepaired(1);
+		ZeusCopy.beRepaired(4294967146);
+		ZeusCopy.printStatus();
+		ZeusCopy.attack("Hades");
+		ZeusCopy.guardGate();
 		std::cout << std::endl;
 	}
-
-	// ClapTrap* tmp = new ScavTrap(); // virtual added to take dynamically the attack and destructor of fragtrap -> do not take the instance (claptrap)  of class but the object real of the thing (scavtrap) at compilation
-	// tmp->attack("THOMAS");
-	// delete tmp;
+	std::cout << std::endl;
+	{
+		ClapTrap* tmp = new ScavTrap();
+		tmp->attack("THOMAS");
+		delete tmp;
+	}
 	return 0;
 }

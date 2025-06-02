@@ -19,27 +19,11 @@ ClapTrap::~ClapTrap( void ) {
 }
 
 ClapTrap& ClapTrap::operator=( ClapTrap const& name ) {
-	this->_name = name.getName();
-	this->_hitPoints = name.getHitPoints();
-	this->_energyPoints = name.getEnergyPoints();
-	this->_attackDamage = name.getAttackDamage();
+	this->_name = name._name;
+	this->_hitPoints = name._hitPoints;
+	this->_energyPoints = name._energyPoints;
+	this->_attackDamage = name._attackDamage;
 	return *this;
-}
-
-unsigned int ClapTrap::getHitPoints( void ) const {
-	return _hitPoints;
-}
-
-unsigned int ClapTrap::getEnergyPoints( void ) const {
-	return _energyPoints;
-}
-
-unsigned int ClapTrap::getAttackDamage( void ) const {
-	return _attackDamage;
-}
-
-std::string ClapTrap::getName( void ) const {
-	return _name;
 }
 
 void ClapTrap::attack( const std::string& target ) {

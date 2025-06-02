@@ -18,10 +18,10 @@ ScavTrap::ScavTrap(ScavTrap const& src) {
 }
 
 ScavTrap& ScavTrap::operator=(ScavTrap const& name) {
-	this->_name = name.getName();
-	this->_hitPoints = name.getHitPoints();
-	this->_energyPoints = name.getEnergyPoints();
-	this->_attackDamage = name.getAttackDamage();
+	this->_name = name._name;
+	this->_hitPoints = name._hitPoints;
+	this->_energyPoints = name._energyPoints;
+	this->_attackDamage = name._attackDamage;
 	return *this;
 }
 
