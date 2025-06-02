@@ -11,6 +11,7 @@ ClapTrap::ClapTrap( std::string name ): _name(name), _hitPoints(10), _energyPoin
 }
 
 ClapTrap::ClapTrap ( ClapTrap const& src ) {
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 	*this = src;
 }
 
@@ -19,10 +20,12 @@ ClapTrap::~ClapTrap( void ) {
 }
 
 ClapTrap& ClapTrap::operator=( ClapTrap const& name ) {
-	this->_name = name._name;
-	this->_hitPoints = name._hitPoints;
-	this->_energyPoints = name._energyPoints;
-	this->_attackDamage = name._attackDamage;
+	if (this != &name) {
+		this->_name = name._name;
+		this->_hitPoints = name._hitPoints;
+		this->_energyPoints = name._energyPoints;
+		this->_attackDamage = name._attackDamage;
+	}
 	return *this;
 }
 
@@ -30,7 +33,7 @@ void ClapTrap::attack( const std::string& target ) {
 	if (_hitPoints <= 0)
 		std::cout << RED << "ClapTrap " << _name << " has not enough hit points to attack!" << RESET << std::endl;
 	else if (_energyPoints <= 0)
-		std::cout << RED << "ClapTrap " << _name << " has not enough energy points to attack!"  << RESET<< std::endl;
+		std::cout << RED << "ClapTrap " << _name << " has not enough energy points to attack!"  << RESET << std::endl;
 	else {
 		_energyPoints--;
 		std::cout << RED << "ClapTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << RESET << std::endl;

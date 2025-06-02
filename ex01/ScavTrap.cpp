@@ -14,14 +14,17 @@ ScavTrap::ScavTrap( std::string name): ClapTrap( name ) {
 }
 
 ScavTrap::ScavTrap(ScavTrap const& src) {
+	std::cout << "ScavTrap copy constructor called" << std::endl;
 	*this = src;
 }
 
 ScavTrap& ScavTrap::operator=(ScavTrap const& name) {
-	this->_name = name._name;
-	this->_hitPoints = name._hitPoints;
-	this->_energyPoints = name._energyPoints;
-	this->_attackDamage = name._attackDamage;
+	if (this != &name) {
+		this->_name = name._name;
+		this->_hitPoints = name._hitPoints;
+		this->_energyPoints = name._energyPoints;
+		this->_attackDamage = name._attackDamage;
+	}
 	return *this;
 }
 
