@@ -20,10 +20,12 @@ ClapTrap::~ClapTrap( void ) {
 }
 
 ClapTrap& ClapTrap::operator=( ClapTrap const& name ) {
-	this->_name = name._name;
-	this->_hitPoints = name._hitPoints;
-	this->_energyPoints = name._energyPoints;
-	this->_attackDamage = name._attackDamage;
+	if (this != &name) {
+		this->_name = name._name;
+		this->_hitPoints = name._hitPoints;
+		this->_energyPoints = name._energyPoints;
+		this->_attackDamage = name._attackDamage;
+	}
 	return *this;
 }
 
