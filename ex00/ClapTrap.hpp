@@ -20,11 +20,6 @@ class ClapTrap {
 
 		ClapTrap& operator=( ClapTrap const& name );
 
-		unsigned int	getHitPoints( void ) const;
-		unsigned int	getEnergyPoints( void ) const;
-		unsigned int	getAttackDamage( void ) const;
-		std::string		getName( void ) const;
-
 		void			attack( const std::string& target );
 		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);

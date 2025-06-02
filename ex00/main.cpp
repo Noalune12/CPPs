@@ -35,12 +35,13 @@ int	main( void ) {
 	std::cout << std::endl;
 	{
 		ClapTrap	Zeus("Zeus");
+		ClapTrap	ZeusCopy(Zeus);
 
 		std::cout << std::endl << "---------- ZEUS MAX REPAIR ----------" << std::endl << std::endl;
-		Zeus.beRepaired(4294967295);
-		Zeus.printStatus();
-		Zeus.beRepaired(4294967285);
-		Zeus.printStatus();
+		ZeusCopy.beRepaired(4294967295);
+		ZeusCopy.printStatus();
+		ZeusCopy.beRepaired(4294967285);
+		ZeusCopy.printStatus();
 		std::cout << std::endl;
 	}
 	return 0;
