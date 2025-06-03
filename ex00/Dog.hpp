@@ -13,7 +13,6 @@ class Dog: public Animal {
 		Dog& operator=(Dog const& name);
 
 		void makeSound() const;
-		std::string getType() const;
 };
 
 #endif

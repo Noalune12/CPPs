@@ -2,10 +2,6 @@
 
 #include <iostream>
 
-// Cat::Cat(): _type("Cat") {
-// 	std::cout << "Cat constuctor called" << std::endl;
-// }
-
 Cat::Cat() {
 	std::cout << "Cat constuctor called" << std::endl;
 	type = "Cat";
@@ -28,8 +24,4 @@ Cat& Cat::operator=(Cat const& name) {
 
 void Cat::makeSound() const {
 	std::cout << "**MEOW MEOW**" << std::endl;
-}
-
-std::string Cat::getType() const {
-	return type;
 }

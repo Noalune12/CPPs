@@ -1,6 +1,8 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 #include <iostream>
 
@@ -52,19 +54,48 @@ int main()
 	}
 	std::cout << std::endl;
 	{
+		std::cout << "------  CONSTRUCTORS  ------" << std::endl;
 		Dog* j = new Dog();
+
+		std::cout << std::endl << "------  COPY  ------" << std::endl;
 		Dog copy = *j;
 		std::cout << "My dog type is : " << copy.getType() << " " << std::endl;
 		std::cout << "My dog sound is : ";
 		copy.makeSound();
+
+		std::cout << std::endl << "------  DETRUCTORS  ------" << std::endl;
 		delete j;
 	}
 	std::cout << std::endl;
-
 	{
+		std::cout << "------  CONSTRUCTORS  ------" << std::endl;
 		Dog test;
 		Dog test2;
+
+		std::cout << std::endl << "------  OPERATOR =  ------" << std::endl;
 		test2 = test; // operator = only called when both classes are constructed while copy constructor is called when directly = when building
+
+		std::cout << std::endl << "------  DETRUCTORS  ------" << std::endl;
+	}
+	std::cout << std::endl;
+	{
+		std::cout << "------  WRONG ANIMAL  ------" << std::endl;
+		std::cout << "------  CONSTRUCTORS  ------" << std::endl;
+		const WrongAnimal* meta = new WrongAnimal();
+		const WrongAnimal* i = new WrongCat();
+
+		std::cout << std::endl << "------  GET TYPE  ------" << std::endl;
+		std::cout << "My cat type is : " << i->getType() << " " << std::endl;
+
+		std::cout << std::endl << "------  MAKE SOUND  ------" << std::endl;
+		std::cout << "My cat sound is : ";
+		i->makeSound();
+		std::cout << "My animal sound is : ";
+		meta->makeSound();
+
+		std::cout << std::endl << "------  DETRUCTORS  ------" << std::endl;
+		delete meta;
+		delete i;
 	}
 	return 0;
 }

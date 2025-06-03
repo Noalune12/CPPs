@@ -26,7 +26,3 @@ Dog& Dog::operator=(Dog const& name) {
 void Dog::makeSound() const {
 	std::cout << "**WOOF WOOF**" << std::endl;
 }
-
-std::string Dog::getType() const {
-	return type;
-}

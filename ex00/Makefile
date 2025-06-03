@@ -1,7 +1,7 @@
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 NAME = Animal
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 OBJDIR = objs
 OBJS = $(patsubst %.cpp,$(OBJDIR)/%.o,$(SRC))
 
@@ -10,7 +10,7 @@ all : $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-$(OBJDIR)/%.o: %.cpp Animal.hpp Dog.hpp Cat.hpp Makefile
+$(OBJDIR)/%.o: %.cpp Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp Makefile
 	@mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
