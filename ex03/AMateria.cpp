@@ -30,4 +30,6 @@ std::string const& AMateria::getType() const {
 	return _type;
 }
 
-// void AMateria::use(ICharacter& target) {}
+void AMateria::use(ICharacter& target) {
+	std::cout << "*use an unknown materia on " << target.getName() << " *" << std::endl;
+}

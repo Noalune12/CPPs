@@ -1,7 +1,14 @@
 #ifndef AMATERIA_H
 # define AMATERIA_H
 
+#include "ICharacter.hpp"
+
 #include <string>
+
+# define PURPLE "\033[0;35m"
+# define RESET "\033[0m"
+
+class ICharacter;
 
 class AMateria
 {
@@ -18,7 +25,7 @@ class AMateria
 
 		std::string const& getType() const;
 		virtual AMateria* clone() const = 0;
-		// virtual void use(ICharacter& target);
+		virtual void use(ICharacter& target);
 };
 
 #endif
