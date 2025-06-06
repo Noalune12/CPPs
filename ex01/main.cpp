@@ -65,11 +65,5 @@ int	main( void ) {
 		ZeusCopy.guardGate();
 		std::cout << std::endl;
 	}
-	std::cout << std::endl;
-	{
-		ClapTrap* tmp = new ScavTrap();
-		tmp->attack("THOMAS");
-		delete tmp;
-	}
 	return 0;
 }
