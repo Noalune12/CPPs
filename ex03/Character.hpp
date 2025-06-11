@@ -3,6 +3,7 @@
 
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
+#include "Storage.hpp"
 
 # define GREEN "\033[32m"
 # define RED "\033[31m"
@@ -26,13 +27,15 @@ class Character: public ICharacter {
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
+		void printGround() const;
 
 	private:
 		std::string _name;
 		AMateria* inventory[4];
-		AMateria** ground;
-		int groundCapacity;
-		int groundSize;
+		Storage _ground;
+		// AMateria** ground;
+		// int groundCapacity;
+		// int groundSize;
 };
 
 #endif

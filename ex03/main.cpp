@@ -1,6 +1,7 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "Character.hpp"
+#include "MateriaSource.hpp"
 
 #include <iostream>
 
@@ -46,20 +47,30 @@ int main() {
 	// 	delete cure2;
 	// }
 	// {
-	// 	// IMateriaSource* src = new MateriaSource();
-	// 	// src->learnMateria(new Ice());
-	// 	// src->learnMateria(new Cure());
-	// 	ICharacter* me = new Character("me");
-	// 	AMateria* tmp;
-	// 	tmp = new Ice();
-	// 	me->equip(tmp);
-	// 	tmp = new Cure();
-	// 	me->equip(tmp);
-	// 	ICharacter* bob = new Character("bob");
-	// 	me->use(0, *bob);
-	// 	me->use(1, *bob);
-	// 	delete bob;
-	// 	delete me;
+		// IMateriaSource* src = new MateriaSource();
+		// src->learnMateria(new Ice());
+		// src->learnMateria(new Cure());
+		// // src->learnMateria(new Cure());
+		// // src->learnMateria(new Cure());
+		// // Cure *tmp = new Cure();
+		// // src->learnMateria(tmp);
+		// // src->learnMateria(tmp);
+
+		// ICharacter* me = new Character("me");
+		// AMateria* tmp;
+		// tmp = src->createMateria("ice");
+		// me->equip(tmp);
+		// tmp = src->createMateria("cure");
+		// me->equip(tmp);
+		// tmp = src->createMateria("hello");
+		// me->equip(tmp);
+
+		// ICharacter* bob = new Character("bob");
+		// me->use(0, *bob);
+		// me->use(1, *bob);
+		// delete bob;
+		// delete me;
+		// delete src;
 	// }
 	// {
 	// 	std::cout << YELLOW << "CHARACTER TEST TEST:\n" << RESET << std::endl;
@@ -127,39 +138,52 @@ int main() {
 		AMateria* tmp2;
 		AMateria* tmp3;
 		AMateria* tmp4;
+		AMateria* tmp5;
 		tmp = new Ice();
 		tmp2 = new Ice();
 		tmp3 = new Ice();
 		tmp4 = new Ice();
+		tmp5 = new Ice();
 
 		std::cout << YELLOW << "\nEquip" << RESET << std::endl;
 		gollum.equip(tmp);
 		gollum.equip(tmp2);
 		gollum.equip(tmp3);
+		gollum.equip(tmp5);
 		gollum.equip(tmp4);
 
 		std::cout << YELLOW << "\nUnequip" << RESET << std::endl;
 		gollum.unequip(2);
-		gollum.equip(tmp3);
+		// gollum.equip(tmp3);
+		gollum.unequip(3);
+		gollum.equip(tmp4);
 		gollum.unequip(2);
 		gollum.equip(tmp3);
-		gollum.unequip(3);
-		gollum.equip(tmp4);
-		gollum.unequip(3);
-		gollum.equip(tmp4);
-		gollum.unequip(3);
-		gollum.equip(tmp4);
-		gollum.unequip(3);
-		gollum.equip(tmp4);
+		gollum.equip(tmp5);
+		gollum.unequip(2);
+		gollum.unequip(0);
+
+		// gollum.equip(tmp5);
+
+		// gollum.unequip(3);
+		// gollum.equip(tmp4);
+		// gollum.unequip(3);
+		// gollum.equip(tmp4);
+		// gollum.unequip(3);
+		// gollum.equip(tmp4);
+		// gollum.unequip(3);
+		// gollum.equip(tmp4);
 		// gollum.equip(tmp3);
 
 
 		std::cout << YELLOW << "\nCopy" << RESET << std::endl;
 		Character frodo("Frodo");
 		Character gollumbis(gollum);
-		// gollum = frodo;
-
-
+		gollumbis.printGround();
+		gollum.printGround();
+		frodo = gollum;
+		gollum.printGround();
+		frodo.printGround();
 		std::cout << YELLOW << "\ndestructor" << RESET << std::endl;
 	}
 	return 0;
