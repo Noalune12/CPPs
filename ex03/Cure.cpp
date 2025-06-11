@@ -1,4 +1,6 @@
 #include "Cure.hpp"
+#include "ICharacter.hpp"
+#include "color.h"
 
 #include <iostream>
 

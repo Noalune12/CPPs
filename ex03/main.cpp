@@ -2,15 +2,9 @@
 #include "Cure.hpp"
 #include "Character.hpp"
 #include "MateriaSource.hpp"
+#include "color.h"
 
 #include <iostream>
-
-#define GREEN "\033[32m"
-#define RED "\033[31m"
-#define YELLOW "\033[1;33m"
-#define BLUE "\033[1;34m"
-#define PURPLE "\033[0;35m"
-#define RESET "\033[0m"
 
 int main() {
 	// {
@@ -132,59 +126,87 @@ int main() {
 	// 	delete frodo;
 	// }
 	{
-		std::cout << YELLOW << "CHARACTER COPY TEST:\n" << RESET << std::endl;
-		Character gollum("Gollum");
-		AMateria* tmp;
-		AMateria* tmp2;
-		AMateria* tmp3;
-		AMateria* tmp4;
-		AMateria* tmp5;
-		tmp = new Ice();
-		tmp2 = new Ice();
-		tmp3 = new Ice();
-		tmp4 = new Ice();
-		tmp5 = new Ice();
+		// std::cout << YELLOW << "CHARACTER COPY TEST:\n" << RESET << std::endl;
+		// Character gollum("Gollum");
+		// AMateria* tmp;
+		// AMateria* tmp2;
+		// AMateria* tmp3;
+		// AMateria* tmp4;
+		// AMateria* tmp5;
+		// tmp = new Ice();
+		// tmp2 = new Ice();
+		// tmp3 = new Ice();
+		// tmp4 = new Ice();
+		// tmp5 = new Ice();
 
-		std::cout << YELLOW << "\nEquip" << RESET << std::endl;
-		gollum.equip(tmp);
-		gollum.equip(tmp2);
-		gollum.equip(tmp3);
-		gollum.equip(tmp5);
-		gollum.equip(tmp4);
-
-		std::cout << YELLOW << "\nUnequip" << RESET << std::endl;
-		gollum.unequip(2);
+		// std::cout << YELLOW << "\nEquip" << RESET << std::endl;
+		// gollum.equip(tmp);
+		// gollum.equip(tmp2);
 		// gollum.equip(tmp3);
-		gollum.unequip(3);
-		gollum.equip(tmp4);
-		gollum.unequip(2);
-		gollum.equip(tmp3);
-		gollum.equip(tmp5);
-		gollum.unequip(2);
-		gollum.unequip(0);
-
 		// gollum.equip(tmp5);
+		// gollum.equip(tmp4);
 
+		// std::cout << YELLOW << "\nUnequip" << RESET << std::endl;
+		// gollum.unequip(2);
+		// // gollum.equip(tmp3);
 		// gollum.unequip(3);
 		// gollum.equip(tmp4);
-		// gollum.unequip(3);
-		// gollum.equip(tmp4);
-		// gollum.unequip(3);
-		// gollum.equip(tmp4);
-		// gollum.unequip(3);
-		// gollum.equip(tmp4);
+		// gollum.unequip(2);
 		// gollum.equip(tmp3);
+		// gollum.equip(tmp5);
+		// gollum.unequip(2);
+		// gollum.unequip(0);
+
+		// // gollum.equip(tmp5);
+
+		// // gollum.unequip(3);
+		// // gollum.equip(tmp4);
+		// // gollum.unequip(3);
+		// // gollum.equip(tmp4);
+		// // gollum.unequip(3);
+		// // gollum.equip(tmp4);
+		// // gollum.unequip(3);
+		// // gollum.equip(tmp4);
+		// // gollum.equip(tmp3);
 
 
-		std::cout << YELLOW << "\nCopy" << RESET << std::endl;
-		Character frodo("Frodo");
-		Character gollumbis(gollum);
-		gollumbis.printGround();
-		gollum.printGround();
-		frodo = gollum;
-		gollum.printGround();
-		frodo.printGround();
-		std::cout << YELLOW << "\ndestructor" << RESET << std::endl;
+		// std::cout << YELLOW << "\nCopy" << RESET << std::endl;
+		// Character frodo("Frodo");
+		// Character gollumbis(gollum);
+		// gollumbis.printGround();
+		// gollum.printGround();
+		// frodo = gollum;
+		// gollum.printGround();
+		// frodo.printGround();
+		// std::cout << YELLOW << "\ndestructor" << RESET << std::endl;
+		{
+			IMateriaSource* src = new MateriaSource();
+			Cure *tmp = new Cure();
+			src->learnMateria(tmp);
+			src->learnMateria(new Ice());
+			src->learnMateria(new Cure());
+			src->learnMateria(new Cure());
+			src->learnMateria(new Cure());
+			src->learnMateria(new Cure());
+			src->learnMateria(tmp);
+
+			src->printContent();
+			// ICharacter* me = new Character("me");
+			// AMateria* tmp;
+			// tmp = src->createMateria("ice");
+			// me->equip(tmp);
+			// tmp = src->createMateria("cure");
+			// me->equip(tmp);
+			// tmp = src->createMateria("hello");
+			// me->equip(tmp);
+
+			// ICharacter* bob = new Character("bob");
+			// me->use(0, *bob);
+			// me->use(1, *bob);
+			// delete bob;
+			// delete me;
+			delete src;
+		}
 	}
 	return 0;
 }

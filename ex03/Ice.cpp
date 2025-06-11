@@ -1,6 +1,11 @@
 #include "Ice.hpp"
+#include "ICharacter.hpp"
+#include "color.h"
 
 #include <iostream>
+
+# define PURPLE "\033[0;35m"
+# define RESET "\033[0m"
 
 Ice::Ice() {
 	_type = "ice";

@@ -10,7 +10,7 @@ all : $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-$(OBJDIR)/%.o: %.cpp AMateria.hpp Ice.hpp Cure.hpp ICharacter.hpp Character.hpp IMateriaSource.hpp MateriaSource.hpp Storage.hpp Makefile
+$(OBJDIR)/%.o: %.cpp AMateria.hpp Ice.hpp Cure.hpp ICharacter.hpp Character.hpp IMateriaSource.hpp MateriaSource.hpp Storage.hpp color.h Makefile
 	@mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 

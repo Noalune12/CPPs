@@ -1,17 +1,12 @@
 #ifndef AMATERIA_H
 # define AMATERIA_H
 
-#include "ICharacter.hpp"
-
 #include <string>
-
-# define PURPLE "\033[0;35m"
-# define RESET "\033[0m"
 
 class ICharacter;
 
-class AMateria
-{
+class AMateria {
+
 	protected:
 		std::string	_type;
 

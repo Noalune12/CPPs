@@ -1,36 +1,36 @@
 #include "Character.hpp"
-#include "Storage.hpp"
+#include "color.h"
 
 #include <iostream>
 #include <algorithm>
 
 Character::Character(): _name("Unknown") {
 	for (int i = 0; i < 4; i++) {
-		inventory[i] = NULL;
+		_inventory[i] = NULL;
 	}
 	std::cout << "Default Character constructor called" << std::endl;
 }
 
 Character::Character(std::string name): _name(name) {
 	for (int i = 0; i < 4; i++) {
-		inventory[i] = NULL;
+		_inventory[i] = NULL;
 	}
 	std::cout << "Character " << _name << " constructor called" << std::endl;
 }
 
 Character::Character(Character const& src): _name(src._name), _ground(src._ground) {
 	for (int i = 0; i < 4; i++) {
-		if (src.inventory[i])
-			inventory[i] = src.inventory[i]->clone();
+		if (src._inventory[i])
+			_inventory[i] = src._inventory[i]->clone();
 		else
-			inventory[i] = NULL;
+			_inventory[i] = NULL;
 	}
 	std::cout << BLUE << "Character copy constructor called" << RESET << std::endl;
 }
 
 Character::~Character() {
 	for (int i = 0; i < 4; i++) {
-			delete inventory[i];
+			delete _inventory[i];
 	}
 	std::cout << "Character destructor called" << std::endl;
 }
@@ -38,13 +38,13 @@ Character::~Character() {
 Character& Character::operator=(Character const& src) {
 	if (this != &src) {
 		for (int i = 0; i < 4; i++)
-			delete inventory[i];
+			delete _inventory[i];
 		_name = src._name;
 		for (int i = 0; i < 4; i++) {
-			if (src.inventory[i])
-				inventory[i] = src.inventory[i]->clone();
+			if (src._inventory[i])
+				_inventory[i] = src._inventory[i]->clone();
 			else
-				inventory[i] = NULL;
+				_inventory[i] = NULL;
 		}
 		_ground = src._ground;
 	}
@@ -63,16 +63,16 @@ void Character::equip(AMateria* m) {
 	}
 	int j = 0;
 	for (int i = 3; i >= 0; i--) {
-		if (inventory[i] != NULL && inventory[i] == m) {
+		if (_inventory[i] != NULL && _inventory[i] == m) {
 			std::cout << RED << "Character " << _name << " can't equip twice the same materia" << RESET << std::endl;
 			return ;
 		}
-		if (inventory[i] == NULL)
+		if (_inventory[i] == NULL)
 			j = i;
 	}
-	if (inventory[j] == NULL) {
-		inventory[j] = m;
-		_ground.compareStorage(inventory[j]);
+	if (_inventory[j] == NULL) {
+		_inventory[j] = m;
+		_ground.compareStorage(_inventory[j]);
 		std::cout << GREEN << "Character " << _name << " added item at index " << j << RESET << std::endl;
 	}
 	else {
@@ -83,21 +83,21 @@ void Character::equip(AMateria* m) {
 }
 
 void Character::unequip(int idx) {
-	if (idx >= 4 || idx < 0 || inventory[idx] == NULL) {
+	if (idx >= 4 || idx < 0 || _inventory[idx] == NULL) {
 		std::cout << RED << "Character " << _name << " can't unequip" << RESET << std::endl;
 		return ;
 	}
-	_ground.addStorage(inventory[idx]);
-	inventory[idx] = NULL;
+	_ground.addStorage(_inventory[idx]);
+	_inventory[idx] = NULL;
 	std::cout << GREEN << "Character " << _name << " unequipped item at index " << idx << RESET << std::endl;
 }
 
 void Character::use(int idx, ICharacter& target) {
-	if (idx >= 4 || idx < 0 || inventory[idx] == NULL) {
+	if (idx >= 4 || idx < 0 || _inventory[idx] == NULL) {
 		std::cout << RED << "Character " << _name << " can't use" << RESET << std::endl;
 		return ;
 	}
-	inventory[idx]->use(target);
+	_inventory[idx]->use(target);
 }
 
 void Character::printGround() const {

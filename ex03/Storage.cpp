@@ -1,4 +1,5 @@
 #include "Storage.hpp"
+#include "AMateria.hpp"
 
 #include <iostream>
 
@@ -74,6 +75,7 @@ void Storage::compareStorage(AMateria* m) {
 		for (int i = j; i < _size - 1; i++) {
 			_storage[i] = _storage[i + 1];
 		}
+		_storage[_size] = NULL;
 		_size--;
 	}
 }
