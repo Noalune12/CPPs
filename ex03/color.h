@@ -6,7 +6,6 @@
 # define YELLOW "\033[1;33m"
 # define BLUE "\033[1;34m"
 # define PURPLE "\033[0;35m"
-// # define CYAN "\033[36m"
 # define RESET "\033[0m"
 
 #endif
