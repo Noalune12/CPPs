@@ -79,16 +79,7 @@
 1. **AMateria**
 	- Pure Virtual Function (clone): any derived class must provide its own implementation of this function. This is because the AMateria class is designed to be an abstract base class, and the clone function is critical for creating a copy of the derived object. Each derived class will have its own specific implementation of clone to ensure the correct type of object is duplicated.
 	- Virtual Function (use): it can be overridden in derived classes, but it is not mandatory to do so. The base class AMateria provides a default implementation of use, which derived classes can either use as-is or override with their own specific behavior.
-2. **TODO**
-	- [X] include in cpp
-	- [ ] test copy with storage
-	- [X] add _ to variable
-	- [ ] supp fonction useless like print ?
-	- [ ] Leaks resolbed = materia unequip then equip with full inventory
-	- [ ] Test main
-	- [ ] comment print of constructor/destructor
-
-3. **INCLUDES**
+2. **INCLUDES**
 	- Forward Declaration W: In AMateria.hpp, the `ICharacter` class is only referenced as a parameter type in the `use` method and as a pointer type in the `clone` method.
 	- Forward declarations are sufficient in these cases because: **Pointers and References**: The compiler does not need the full definition of a class to declare pointers or references to it. It only needs to know that the class exists, which is what the forward declaration provides. **No Member Variables or Base Class**: `AMateria` does not inherit from `ICharacter`, nor does it have `ICharacter` as a member variable. These scenarios would require the full definition of `ICharacter`.
 	- In `Character.hpp`, the `ICharacter` class is used as a **base class** (`class Character : public ICharacter`) and the `Storage` class is used as a **member variable** (`Storage _ground`). Both of these usages require the full definitions of the respective classes because:**Base Classes**: The compiler needs the full definition of a base class to generate the derived class's layout and ensure proper inheritance. **Member Variables**: The compiler needs the full definition of a class to allocate memory for its member variables.
