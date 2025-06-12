@@ -23,9 +23,18 @@ Cat& Cat::operator=(Cat const& name) {
 		delete brain;
 		brain = new Brain(*name.brain);
 	}
+	std::cout << "Cat operator called" << std::endl;
 	return *this;
 }
 
 void Cat::makeSound() const {
 	std::cout << "**MEOW MEOW**" << std::endl;
+}
+
+void Cat::setIdea(int index, std::string idea)  {
+	brain->setIdea(index, idea);
+}
+
+std::string Cat::getIdea(int index) const {
+	return brain->getIdea(index);
 }

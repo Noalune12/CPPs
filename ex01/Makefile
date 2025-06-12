@@ -1,5 +1,5 @@
 CXX = c++
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 NAME = Brain
 SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 OBJDIR = objs

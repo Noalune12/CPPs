@@ -7,82 +7,85 @@
 
 #include <iostream>
 
+# define YELLOW "\033[1;33m"
+# define BLUE "\033[1;34m"
+# define RESET "\033[0m"
+# define AMOUNT 10
+
 int main()
 {
-	// {
-	// 	std::cout << "------  BRAIN ONLY  ------" << std::endl;
-
-	// 	std::cout << "------  CONSTRUCTORS  ------" << std::endl;
-	// 	Brain a;
-	// 	Brain c;
-
-	// 	std::cout << std::endl << "------  COPY  ------" << std::endl;
-	// 	Brain b(a);
-
-	// 	std::cout << std::endl << "------  OPERATOR  ------" << std::endl;
-	// 	c = b;
-	// 	c.setIdea(2, "this is a new idea");
-	// 	std::cout << std::endl << "------  b IDEAS  ------" << std::endl;
-	// 	for (int i = 0; i < 100; i++)
-	// 		std::cout << b.getIdea(i) << ", ";
-	// 	std::cout << std::endl;
-	// 	std::cout << std::endl << "------  c IDEAS  ------" << std::endl;
-	// 	for (int i = 0; i < 100; i++)
-	// 		std::cout << c.getIdea(i) << ", ";
-	// 	std::cout << std::endl;
-	// 	std::cout << std::endl << "------  DETRUCTORS  ------" << std::endl;
-	// }
-	// std::cout << std::endl;
-	// {
-	// 	const Animal* j = new Dog();
-	// 	delete j;
-	// }
-	// std::cout << std::endl;
-	// {
-	// 	std::cout << "------  CONSTRUCTORS  ------" << std::endl;
-	// 	Dog* j = new Dog();
-
-	// 	std::cout << std::endl << "------  COPY  ------" << std::endl;
-	// 	Dog copy = *j;
-	// 	std::cout << "My dog type is : " << copy.getType() << " " << std::endl;
-	// 	std::cout << "My dog sound is : ";
-	// 	copy.makeSound();
-	// 	copy.getBrain()->setIdea(2, "idea 2 was changed");
-	// 	for (int i = 0; i < 100; i++)
-	// 		std::cout << j->getBrain()->getIdea(i) << ", ";
-	// 	std::cout << std::endl << std::endl;
-	// 	for (int i = 0; i < 100; i++)
-	// 		std::cout << copy.getBrain()->getIdea(i) << ", ";
-	// 	std::cout << std::endl << "------  DETRUCTORS  ------" << std::endl;
-	// 	delete j;
-	// }
-	// std::cout << std::endl;
-	// {
-	// 	std::cout << "------  CONSTRUCTORS  ------" << std::endl;
-	// 	Dog test;
-	// 	Dog test2;
-
-	// 	std::cout << std::endl << "------  OPERATOR =  ------" << std::endl;
-	// 	test2 = test; // operator = only called when both classes are constructed while copy constructor is called when directly = when building
-	// 	test2.getBrain()->setIdea(2, "idea 2 was changed");
-	// 	for (int i = 0; i < 100; i++)
-	// 		std::cout << test.getBrain()->getIdea(i) << ", ";
-	// 	std::cout << std::endl << std::endl;
-	// 	for (int i = 0; i < 100; i++)
-	// 		std::cout << test2.getBrain()->getIdea(i) << ", ";
-	// 	std::cout << std::endl << "------  DETRUCTORS  ------" << std::endl;
-	// }
-	// std::cout << std::endl;
 	{
-		std::cout << "------  CONSTRUCTORS  ------" << std::endl;
-		Animal* meta[4];
-		for (int i = 0; i < 2; i++)
+		std::cout << YELLOW << "------  BRAIN ONLY  ------" << RESET << std::endl;
+
+		std::cout << BLUE << "------  CONSTRUCTORS  ------" << RESET << std::endl;
+		Brain a;
+		Brain c;
+
+		std::cout << BLUE << "\n------  COPY  ------" << RESET << std::endl;
+		Brain b(a);
+
+		std::cout << std::endl << BLUE << "------  OPERATOR  ------" << RESET << std::endl;
+		c = b;
+		c.setIdea(2, "this is a new idea");
+
+		std::cout << BLUE << "\n------  b IDEAS  ------" << RESET << std::endl;
+		for (int i = 0; i < 100; i++)
+			std::cout << b.getIdea(i) << ", ";
+
+		std::cout << BLUE << "\n\n------  c IDEAS  ------" << RESET << std::endl;
+		for (int i = 0; i < 100; i++)
+			std::cout << c.getIdea(i) << ", ";
+		std::cout << std::endl;
+		std::cout << BLUE << std::endl << "------  DETRUCTORS  ------" << RESET << std::endl;
+	}
+	std::cout << std::endl;
+	{
+		std::cout << YELLOW << "------  TEST WITH ARRAY  ------" << RESET << std::endl;
+		std::cout << BLUE << "------  CONSTRUCTORS  ------" << RESET << std::endl;
+		Animal* meta[AMOUNT];
+		for (int i = 0; i < AMOUNT / 2; i++)
 			meta[i] = new Dog();
-		for (int i = 2; i < 4; i++)
+		for (int i = AMOUNT / 2; i < AMOUNT; i++)
 			meta[i] = new Cat();
-		std::cout << std::endl << "------  DETRUCTORS  ------" << std::endl;
-		for (int i = 0; i < 4; i++)
+		std::cout << BLUE << std::endl << "------  MAKE SOUND  ------" << RESET << std::endl;
+		for (int i = 0; i < AMOUNT; i++)
+			meta[i]->makeSound();
+		std::cout << BLUE << std::endl << "------  DETRUCTORS  ------" << RESET << std::endl;
+		for (int i = 0; i < AMOUNT; i++)
 			delete meta[i];
+	}
+	std::cout << std::endl;
+	{
+		std::cout << YELLOW << "------  COPY TEST  ------" << RESET << std::endl;
+		std::cout << BLUE << "------  CONSTRUCTORS  ------" << RESET << std::endl;
+		Dog* j = new Dog();
+
+		std::cout << BLUE << std::endl << "------  COPY  ------" << RESET << std::endl;
+		Dog *copy = new Dog(*j);
+		Dog *copy2 = NULL;
+		std::cout << "\n" << std::endl;
+		std::cout << "My dog type is : " << copy->getType() << " " << RESET << std::endl;
+		std::cout << "My dog sound is : ";
+		copy->makeSound();
+
+		std::cout << std::endl << BLUE << "------  BRAIN  ------" << RESET << std::endl;
+		std::cout << BLUE << "\n------  copy IDEAS  ------" << RESET << std::endl;
+		copy->setIdea(0, "I replace idea at index 0 only for the copy");
+		for (int i = 0; i < 100; i++)
+			std::cout << copy->getIdea(i) << ", ";
+		std::cout << BLUE << "\n\n------  copy2 copied ------" << RESET << std::endl;
+		copy2 = new Dog(*j);
+		copy2->setIdea(99, "be careful");
+		std::cout << BLUE << "\n\n------  src IDEAS  ------" << RESET << std::endl;
+		for (int i = 0; i < 100; i++)
+			std::cout << j->getIdea(i) << ", ";
+		std::cout << BLUE << "\n\n------  copy2 IDEAS (after copy) ------" << RESET << std::endl;
+		for (int i = 0; i < 100; i++)
+			std::cout << copy2->getIdea(i) << ", ";
+		std::cout << BLUE << "\n\n------  DETRUCTORS  ------" << RESET << std::endl;
+		delete j;
+		delete copy;
+		delete copy2;
 	}
 	return 0;
 }

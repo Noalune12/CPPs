@@ -29,3 +29,14 @@ void Animal::makeSound() const {
 std::string Animal::getType() const {
 	return type;
 }
+
+void Animal::setIdea(int index, std::string idea) {
+	(void)index;
+	(void)idea;
+	std::cout << "I have no brain sorry" << std::endl;
+}
+
+std::string Animal::getIdea(int index) const {
+	(void)index;
+	return "I have no brain sorry";
+}
