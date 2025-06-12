@@ -8,14 +8,14 @@ Character::Character(): _name("Unknown") {
 	for (int i = 0; i < 4; i++) {
 		_inventory[i] = NULL;
 	}
-	std::cout << "Default Character constructor called" << std::endl;
+	// std::cout << "Default Character constructor called" << std::endl;
 }
 
 Character::Character(std::string name): _name(name) {
 	for (int i = 0; i < 4; i++) {
 		_inventory[i] = NULL;
 	}
-	std::cout << "Character " << _name << " constructor called" << std::endl;
+	// std::cout << "Character " << _name << " constructor called" << std::endl;
 }
 
 Character::Character(Character const& src): _name(src._name), _ground(src._ground) {
@@ -25,18 +25,19 @@ Character::Character(Character const& src): _name(src._name), _ground(src._groun
 		else
 			_inventory[i] = NULL;
 	}
-	std::cout << BLUE << "Character copy constructor called" << RESET << std::endl;
+	// std::cout << BLUE << "Character copy constructor called" << RESET << std::endl;
 }
 
 Character::~Character() {
 	for (int i = 0; i < 4; i++) {
 			delete _inventory[i];
 	}
-	std::cout << "Character destructor called" << std::endl;
+	// std::cout << "Character destructor called" << std::endl;
 }
 
 Character& Character::operator=(Character const& src) {
 	if (this != &src) {
+		_ground = src._ground;
 		for (int i = 0; i < 4; i++)
 			delete _inventory[i];
 		_name = src._name;
@@ -46,9 +47,8 @@ Character& Character::operator=(Character const& src) {
 			else
 				_inventory[i] = NULL;
 		}
-		_ground = src._ground;
 	}
-	std::cout << BLUE << "Character operator called" << RESET << std::endl;
+	// std::cout << BLUE << "Character operator called" << RESET << std::endl;
 	return *this;
 }
 
@@ -73,12 +73,12 @@ void Character::equip(AMateria* m) {
 	if (_inventory[j] == NULL) {
 		_inventory[j] = m;
 		_ground.compareStorage(_inventory[j]);
-		std::cout << GREEN << "Character " << _name << " added item at index " << j << RESET << std::endl;
+		std::cout << GREEN << "Character " << _name << " added item " << m->getType() << " at index " << j << RESET << std::endl;
 	}
 	else {
 		_ground.compareStorage(m);
 		_ground.addStorage(m);
-		std::cout << RED << "Character " << _name << "'s inventory is full" << RESET << std::endl;
+		std::cout << RED << "Character " << _name << "'s inventory is full. " << m->getType() << " can't be added." << RESET << std::endl;
 	}
 }
 
@@ -87,9 +87,9 @@ void Character::unequip(int idx) {
 		std::cout << RED << "Character " << _name << " can't unequip" << RESET << std::endl;
 		return ;
 	}
+	std::cout << GREEN << "Character " << _name << " unequipped item " << _inventory[idx]->getType() << " at index " << idx << RESET << std::endl;
 	_ground.addStorage(_inventory[idx]);
 	_inventory[idx] = NULL;
-	std::cout << GREEN << "Character " << _name << " unequipped item at index " << idx << RESET << std::endl;
 }
 
 void Character::use(int idx, ICharacter& target) {
@@ -103,4 +103,11 @@ void Character::use(int idx, ICharacter& target) {
 void Character::printGround() const {
 	std::cout << _name << " storage : " << std::endl;
 	_ground.printStorage();
+	std::cout << "\ninventory : " << std::endl;
+	for (int i = 0; i < 4; i++) {
+		if (_inventory[i])
+			std::cout << _inventory[i]->getType() << " " << &_inventory[i] << std::endl;
+		else
+			std::cout << "NULL" << std::endl;
+	}
 }

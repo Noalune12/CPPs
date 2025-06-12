@@ -4,27 +4,24 @@
 
 #include <iostream>
 
-# define PURPLE "\033[0;35m"
-# define RESET "\033[0m"
-
 Ice::Ice() {
 	_type = "ice";
-	std::cout << "Ice constructor called" << std::endl;
+	// std::cout << "Ice constructor called" << std::endl;
 }
 
 Ice::Ice(Ice const& src): AMateria(src) {
-	std::cout << "Ice copy constructor called" << std::endl;
+	// std::cout << "Ice copy constructor called" << std::endl;
 }
 
 Ice::~Ice() {
-	std::cout << "Ice destructor called" << std::endl;
+	// std::cout << "Ice destructor called" << std::endl;
 }
 
 Ice& Ice::operator=(Ice const& name) {
 	if (this != &name) {
 		AMateria::operator=(name);
 	}
-	std::cout << "Ice operator called" << std::endl;
+	// std::cout << "Ice operator called" << std::endl;
 	return *this;
 }
 

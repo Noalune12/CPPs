@@ -7,7 +7,7 @@ MateriaSource::MateriaSource() {
 	for (int i = 0; i < 4; i++) {
 		_inventory[i] = NULL;
 	}
-	std::cout << "Materia Source constructor called" << std::endl;
+	// std::cout << "Materia Source constructor called" << std::endl;
 }
 
 MateriaSource::MateriaSource(MateriaSource const& src): _storage(src._storage) {
@@ -17,14 +17,14 @@ MateriaSource::MateriaSource(MateriaSource const& src): _storage(src._storage) {
 		else
 			_inventory[i] = NULL;
 	}
-	std::cout << BLUE << "Materia Source copy constructor called" << RESET << std::endl;
+	// std::cout << BLUE << "Materia Source copy constructor called" << RESET << std::endl;
 }
 
 MateriaSource::~MateriaSource() {
 	for (int i = 0; i < 4; i++) {
 		delete _inventory[i];
 	}
-	std::cout << "Materia Source destructor called" << std::endl;
+	// std::cout << "Materia Source destructor called" << std::endl;
 }
 
 MateriaSource& MateriaSource::operator=(MateriaSource const& src) {
@@ -39,7 +39,7 @@ MateriaSource& MateriaSource::operator=(MateriaSource const& src) {
 		}
 		_storage = src._storage;
 	}
-	std::cout << BLUE << "Materia Source operator called" << RESET << std::endl;
+	// std::cout << BLUE << "Materia Source operator called" << RESET << std::endl;
 	return *this;
 }
 
@@ -58,7 +58,6 @@ void MateriaSource::learnMateria(AMateria* m) {
 	}
 	if (i == 4)
 		std::cout << RED << "Materia Source's Invetory is full, a new materia can't be learned" << RESET << std::endl;
-	// delete m; // add to a temp _inventory and delete at the end
 	_storage.compareStorage(m);
 	_storage.addStorage(m);
 }

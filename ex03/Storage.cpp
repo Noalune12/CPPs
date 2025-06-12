@@ -5,7 +5,7 @@
 
 Storage::Storage(): _capacity(10), _size(0) {
 	_storage = new AMateria*[_capacity];
-	std::cout << "Storage constructor called" << std::endl;
+	// std::cout << "Storage constructor called" << std::endl;
 }
 
 Storage::Storage(Storage const& src): _capacity(src._capacity), _size(src._size) {
@@ -17,7 +17,7 @@ Storage::Storage(Storage const& src): _capacity(src._capacity), _size(src._size)
 		else
 			_storage[i] = NULL;
 	}
-	std::cout << "Storage copy constructor called" << std::endl;
+	// std::cout << "Storage copy constructor called" << std::endl;
 }
 
 Storage::~Storage() {
@@ -25,7 +25,7 @@ Storage::~Storage() {
 		delete _storage[i];
 	}
 	delete[] _storage;
-	std::cout << "Storage destructor called" << std::endl;
+	// std::cout << "Storage destructor called" << std::endl;
 }
 
 Storage& Storage::operator=(Storage const& src) {
@@ -44,7 +44,7 @@ Storage& Storage::operator=(Storage const& src) {
 				_storage[i] = NULL;
 		}
 	}
-	std::cout << "Storage operator called" << std::endl;
+	// std::cout << "Storage operator called" << std::endl;
 	return *this;
 }
 

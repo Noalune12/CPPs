@@ -6,207 +6,162 @@
 
 #include <iostream>
 
+void basicmain();
+void othertests();
+void nomateriasource();
+void withmateriasource();
+
 int main() {
-	// {
-	// 	std::cout << YELLOW << "MATERIA TEST:\n" << RESET << std::endl;
-
-	// 	std::cout << YELLOW << "Default constructor:" << RESET << std::endl;
-	// 	Ice ice1;
-	// 	std::cout << "Type: " << ice1.getType() << std::endl;
-	// 	Cure cure1;
-	// 	std::cout << "Type: " << cure1.getType() << std::endl;
-
-	// 	std::cout << YELLOW << "\nParameterized constructor:" << RESET << std::endl;
-	// 	AMateria* ice2 = ice1.clone();
-	// 	std::cout << "Cloned Type: " << ice2->getType() << std::endl;
-	// 	AMateria* cure2 = cure1.clone();
-	// 	std::cout << "Cloned Type: " << cure2->getType() << std::endl;
-
-	// 	std::cout << YELLOW << "\nCopy constructor:" << RESET << std::endl;
-	// 	Ice ice3(ice1);
-	// 	std::cout << "Type: " << ice3.getType() << std::endl;
-	// 	Cure cure3(cure1);
-	// 	std::cout << "Type: " << cure3.getType() << std::endl;
-
-	// 	std::cout << YELLOW << "\nAssignment operator:" << RESET << std::endl;
-	// 	Ice ice4;
-	// 	ice4 = ice1;
-	// 	std::cout << "Type: " << ice4.getType() << std::endl;
-	// 	Cure cure4;
-	// 	cure4 = cure1;
-	// 	std::cout << "Type: " << cure4.getType() << std::endl;
-
-	// 	std::cout << YELLOW << "\nTesting destructor:" << RESET << std::endl;
-	// 	delete ice2;
-	// 	delete cure2;
-	// }
-	// {
-		// IMateriaSource* src = new MateriaSource();
-		// src->learnMateria(new Ice());
-		// src->learnMateria(new Cure());
-		// // src->learnMateria(new Cure());
-		// // src->learnMateria(new Cure());
-		// // Cure *tmp = new Cure();
-		// // src->learnMateria(tmp);
-		// // src->learnMateria(tmp);
-
-		// ICharacter* me = new Character("me");
-		// AMateria* tmp;
-		// tmp = src->createMateria("ice");
-		// me->equip(tmp);
-		// tmp = src->createMateria("cure");
-		// me->equip(tmp);
-		// tmp = src->createMateria("hello");
-		// me->equip(tmp);
-
-		// ICharacter* bob = new Character("bob");
-		// me->use(0, *bob);
-		// me->use(1, *bob);
-		// delete bob;
-		// delete me;
-		// delete src;
-	// }
-	// {
-	// 	std::cout << YELLOW << "CHARACTER TEST TEST:\n" << RESET << std::endl;
-	// 	ICharacter* gollum = new Character("Gollum");
-	// 	ICharacter* frodo = new Character("Frodo");
-	// 	AMateria* tmp;
-	// 	AMateria* tmp2;
-	// 	tmp = new Ice();
-
-	// 	std::cout << YELLOW << "\nEquip twice same materia" << RESET << std::endl;
-	// 	gollum->equip(tmp);
-	// 	gollum->equip(tmp);
-
-	// 	std::cout << YELLOW << "\nUse materia" << RESET << std::endl;
-	// 	gollum->use(0, *frodo);
-	// 	gollum->use(-10, *frodo);
-	// 	gollum->use(2, *frodo);
-
-	// 	std::cout << YELLOW << "\nEquip all materias" << RESET << std::endl;
-	// 	tmp = new Ice();
-	// 	gollum->equip(tmp);
-	// 	tmp = new Cure();
-	// 	gollum->equip(tmp);
-	// 	tmp2 = new Cure();
-	// 	gollum->equip(tmp2);
-	// 	gollum->equip(tmp2);
-	// 	tmp = new Cure();
-	// 	gollum->equip(tmp);
-
-	// 	std::cout << YELLOW << "\nUnequip" << RESET << std::endl;
-	// 	gollum->unequip(2);
-	// 	gollum->equip(tmp2);
-	// 	gollum->unequip(2);
-	// 	tmp2 = new Cure();
-	// 	gollum->equip(tmp2);
-
-	// 	std::cout << YELLOW << "\nUse" << RESET << std::endl;
-	// 	gollum->use(-1, *frodo);
-	// 	gollum->use(4, *frodo);
-	// 	gollum->use(0, *frodo);
-	// 	gollum->use(1, *frodo);
-	// 	gollum->use(2, *frodo);
-	// 	gollum->use(3, *frodo);
-	// 	gollum->unequip(1);
-	// 	gollum->use(0, *frodo);
-	// 	gollum->use(1, *frodo);
-	// 	gollum->use(2, *frodo);
-	// 	gollum->use(3, *frodo);
-	// 	gollum->unequip(0);
-	// 	gollum->unequip(2);
-	// 	gollum->unequip(3);
-	// 	gollum->use(0, *frodo);
-	// 	gollum->use(1, *frodo);
-	// 	gollum->use(2, *frodo);
-	// 	gollum->use(3, *frodo);
-
-	// 	std::cout << YELLOW << "\ndestructor" << RESET << std::endl;
-	// 	delete gollum;
-	// 	delete frodo;
-	// }
-	{
-		// std::cout << YELLOW << "CHARACTER COPY TEST:\n" << RESET << std::endl;
-		// Character gollum("Gollum");
-		// AMateria* tmp;
-		// AMateria* tmp2;
-		// AMateria* tmp3;
-		// AMateria* tmp4;
-		// AMateria* tmp5;
-		// tmp = new Ice();
-		// tmp2 = new Ice();
-		// tmp3 = new Ice();
-		// tmp4 = new Ice();
-		// tmp5 = new Ice();
-
-		// std::cout << YELLOW << "\nEquip" << RESET << std::endl;
-		// gollum.equip(tmp);
-		// gollum.equip(tmp2);
-		// gollum.equip(tmp3);
-		// gollum.equip(tmp5);
-		// gollum.equip(tmp4);
-
-		// std::cout << YELLOW << "\nUnequip" << RESET << std::endl;
-		// gollum.unequip(2);
-		// // gollum.equip(tmp3);
-		// gollum.unequip(3);
-		// gollum.equip(tmp4);
-		// gollum.unequip(2);
-		// gollum.equip(tmp3);
-		// gollum.equip(tmp5);
-		// gollum.unequip(2);
-		// gollum.unequip(0);
-
-		// // gollum.equip(tmp5);
-
-		// // gollum.unequip(3);
-		// // gollum.equip(tmp4);
-		// // gollum.unequip(3);
-		// // gollum.equip(tmp4);
-		// // gollum.unequip(3);
-		// // gollum.equip(tmp4);
-		// // gollum.unequip(3);
-		// // gollum.equip(tmp4);
-		// // gollum.equip(tmp3);
-
-
-		// std::cout << YELLOW << "\nCopy" << RESET << std::endl;
-		// Character frodo("Frodo");
-		// Character gollumbis(gollum);
-		// gollumbis.printGround();
-		// gollum.printGround();
-		// frodo = gollum;
-		// gollum.printGround();
-		// frodo.printGround();
-		// std::cout << YELLOW << "\ndestructor" << RESET << std::endl;
-		{
-			IMateriaSource* src = new MateriaSource();
-			Cure *tmp = new Cure();
-			src->learnMateria(tmp);
-			src->learnMateria(new Ice());
-			src->learnMateria(new Cure());
-			src->learnMateria(new Cure());
-			src->learnMateria(new Cure());
-			src->learnMateria(new Cure());
-			src->learnMateria(tmp);
-
-			src->printContent();
-			// ICharacter* me = new Character("me");
-			// AMateria* tmp;
-			// tmp = src->createMateria("ice");
-			// me->equip(tmp);
-			// tmp = src->createMateria("cure");
-			// me->equip(tmp);
-			// tmp = src->createMateria("hello");
-			// me->equip(tmp);
-
-			// ICharacter* bob = new Character("bob");
-			// me->use(0, *bob);
-			// me->use(1, *bob);
-			// delete bob;
-			// delete me;
-			delete src;
-		}
+	std::string input;
+	while (1) {
+		std::cout << GREEN << "Choose your test :" << RESET << std::endl;
+		std::cout << "- 1: Basic main\n- 2: Other tests\n- 3: Test with no materia source and copied\n- 4: test with materia source and copies\n- 5: exit\nEnter your choice: ";
+		std::getline(std::cin, input);
+		if (input == "5" || std::cin.eof())
+			break;
+		else if (input == "1")
+			basicmain();
+		else if (input == "2")
+			othertests();
+		else if (input == "3")
+			nomateriasource();
+		else if (input == "4")
+			withmateriasource();
+		else
+			std::cout << RED << "Invalid input" << RESET;
+		std::cout << "\n" << std::endl;
 	}
 	return 0;
+}
+
+void basicmain() {
+	std::cout << YELLOW << "-------- BASIC MAIN --------\n" << RESET << std::endl;
+
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	ICharacter* bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
+	delete bob;
+	delete me;
+	delete src;
+}
+
+void othertests() {
+	std::cout << YELLOW << "\n-------- OTHER TESTS --------\n" << RESET << std::endl;
+	std::cout << BLUE << "-------- learn materia --------\n" << RESET << std::endl;
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	std::cout << BLUE << "\n-------- equip first materia and use it --------\n" << RESET << std::endl;
+	ICharacter* me = new Character("me");
+	ICharacter* bob = new Character("bob");
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	me->use(0, *bob);
+
+	std::cout << BLUE << "\n-------- try to use others --------\n" << RESET << std::endl;
+	me->use(1, *bob);
+	me->use(2, *bob);
+	me->use(3, *bob);
+	me->use(13, *bob);
+	me->use(-3, *bob);
+
+	std::cout << BLUE << "\n-------- equip full --------\n" << RESET << std::endl;
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	me->use(1, *bob);
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+
+	std::cout << BLUE << "\n-------- unequip then equip --------\n" << RESET << std::endl;
+	me->unequip(1);
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+
+	std::cout << BLUE << "\n-------- unequip everything --------\n" << RESET << std::endl;
+	me->unequip(0);
+	me->unequip(0);
+	me->unequip(1);
+	me->unequip(2);
+	me->unequip(3);
+
+	delete me;
+	delete src;
+	delete bob;
+}
+
+void nomateriasource() {
+	std::cout << YELLOW << "\n-------- TESTS WITH NO MATERIA SOURCE --------\n" << RESET << std::endl;
+	Character gollum("Gollum");
+	Character frodo("Frodo");
+	AMateria* tmp;
+	AMateria* tmp2;
+	tmp = new Ice();
+
+	std::cout << BLUE << "-------- Equip twice same materia --------\n" << RESET << std::endl;
+	gollum.equip(tmp);
+	gollum.equip(tmp);
+
+
+	std::cout << BLUE << "\n-------- Equip all materias --------\n" << RESET << std::endl;
+	tmp = new Ice();
+	gollum.equip(tmp);
+	tmp = new Cure();
+	gollum.equip(tmp);
+	tmp2 = new Cure();
+	gollum.equip(tmp2);
+	tmp = new Cure();
+	gollum.equip(tmp);
+
+	std::cout << BLUE << "\n-------- Unequip and try to reequip previous materia with full inventory --------\n" << RESET << std::endl;
+	gollum.unequip(3);
+	tmp = new Cure();
+	gollum.equip(tmp);
+	gollum.equip(tmp2);
+	std::cout << BLUE << "\n-------- copies --------\n" << RESET << std::endl;
+	Character copy(frodo);
+	frodo.use(0, gollum);
+	frodo = gollum;
+	frodo.use(0, gollum);
+	frodo.use(2, gollum);
+	copy.use(0, gollum);
+	copy.use(2, gollum);
+}
+
+void withmateriasource() {
+	std::cout << YELLOW << "\n-------- TESTS WITH MATERIA SOURCE --------" << RESET << std::endl;
+	std::cout << BLUE << "\n-------- copies --------\n" << RESET << std::endl;
+	Character me("Loulou");
+	Character enemy("Enemy");
+	MateriaSource src;
+	src.learnMateria(new Ice());
+	MateriaSource copy(src);
+	AMateria* tmp;
+	tmp = copy.createMateria("ice");
+	me.equip(tmp);
+	me.use(0, enemy);
+	src.learnMateria(new Cure());
+	tmp = copy.createMateria("cure");
+	MateriaSource copy2;
+	copy2 = src;
+	tmp = copy2.createMateria("cure");
+	me.equip(tmp);
+	me.use(1, enemy);
 }
