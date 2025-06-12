@@ -49,6 +49,8 @@ Storage& Storage::operator=(Storage const& src) {
 }
 
 void Storage::addStorage(AMateria* m) {
+	if (m == NULL)
+		return;
 	if (_size == _capacity) {
 		std::cout << "Storage is resized" << std::endl;
 		_capacity *= 2;
@@ -62,10 +64,11 @@ void Storage::addStorage(AMateria* m) {
 }
 
 void Storage::compareStorage(AMateria* m) {
+	if (m == NULL)
+		return;
 	int j = -1;
 	for (int i = 0; i < _size; i++) {
 		if (_storage[i] && _storage[i] == m) {
-			// _storage[i] = NULL;
 			j = i;
 			std::cout << "Materia was found in storage at index " << i << std::endl;
 			break;
@@ -77,14 +80,5 @@ void Storage::compareStorage(AMateria* m) {
 		}
 		_storage[_size] = NULL;
 		_size--;
-	}
-}
-
-void Storage::printStorage() const {
-	for (int i = 0; i < _size; i++) {
-		if (_storage[i])
-			std::cout << _storage[i]->getType() << " " << &_storage[i] << std::endl;
-		else
-			std::cout << "NULL" << std::endl;
 	}
 }

@@ -14,7 +14,6 @@ class Storage {
 
 		void addStorage(AMateria* m);
 		void compareStorage(AMateria* m);
-		void printStorage() const;
 
 	private:
 		AMateria **_storage;

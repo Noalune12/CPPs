@@ -99,15 +99,3 @@ void Character::use(int idx, ICharacter& target) {
 	}
 	_inventory[idx]->use(target);
 }
-
-void Character::printGround() const {
-	std::cout << _name << " storage : " << std::endl;
-	_ground.printStorage();
-	std::cout << "\ninventory : " << std::endl;
-	for (int i = 0; i < 4; i++) {
-		if (_inventory[i])
-			std::cout << _inventory[i]->getType() << " " << &_inventory[i] << std::endl;
-		else
-			std::cout << "NULL" << std::endl;
-	}
-}

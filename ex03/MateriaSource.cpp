@@ -72,7 +72,3 @@ AMateria* MateriaSource::createMateria(std::string const& type) {
 	std::cout << RED << "Materia " << type << " can't be created" << RESET << std::endl;
 	return NULL;
 }
-
-void MateriaSource::printContent() const {
-	_storage.printStorage();
-}
