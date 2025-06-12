@@ -22,10 +22,6 @@ Animal& Animal::operator=(Animal const& name) {
 	return (*this);
 }
 
-void Animal::makeSound() const {
-	std::cout << "**Random animal sound**" << std::endl;
-}
-
 std::string Animal::getType() const {
 	return type;
 }
