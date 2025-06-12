@@ -6,9 +6,13 @@
 
 #include <iostream>
 
+# define YELLOW "\033[1;33m"
+# define RESET "\033[0m"
+
 int main()
 {
 	{
+		std::cout << YELLOW << "------  TEST WITH SIMPLE DECLARATION  ------" << RESET << std::endl;
 		std::cout << "------  CONSTRUCTORS  ------" << std::endl;
 		Animal animal;
 		Dog dog;
@@ -17,6 +21,7 @@ int main()
 		std::cout << std::endl << "------  GET TYPE  ------" << std::endl;
 		std::cout << "My dog type is : " << dog.getType() << " " << std::endl;
 		std::cout << "My cat type is : " << cat.getType() << " " << std::endl;
+		std::cout << "My Animal type is : " << animal.getType() << " " << std::endl;
 
 		std::cout << std::endl << "------  MAKE SOUND  ------" << std::endl;
 		std::cout << "My cat sound is : ";
@@ -30,6 +35,7 @@ int main()
 	}
 	std::cout << std::endl;
 	{
+		std::cout << YELLOW << "------  TEST WITH POINTER DECLARATION  ------" << RESET << std::endl;
 		std::cout << "------  CONSTRUCTORS  ------" << std::endl;
 		const Animal* meta = new Animal();
 		const Animal* j = new Dog();
@@ -54,6 +60,7 @@ int main()
 	}
 	std::cout << std::endl;
 	{
+		std::cout << YELLOW << "------  COPY TEST  ------" << RESET << std::endl;
 		std::cout << "------  CONSTRUCTORS  ------" << std::endl;
 		Dog* j = new Dog();
 
@@ -68,18 +75,7 @@ int main()
 	}
 	std::cout << std::endl;
 	{
-		std::cout << "------  CONSTRUCTORS  ------" << std::endl;
-		Dog test;
-		Dog test2;
-
-		std::cout << std::endl << "------  OPERATOR =  ------" << std::endl;
-		test2 = test; // operator = only called when both classes are constructed while copy constructor is called when directly = when building
-
-		std::cout << std::endl << "------  DETRUCTORS  ------" << std::endl;
-	}
-	std::cout << std::endl;
-	{
-		std::cout << "------  WRONG ANIMAL  ------" << std::endl;
+		std::cout << YELLOW << "------  WRONG ANIMAL  ------" << RESET << std::endl;
 		std::cout << "------  CONSTRUCTORS  ------" << std::endl;
 		const WrongAnimal* meta = new WrongAnimal();
 		const WrongAnimal* i = new WrongCat();
