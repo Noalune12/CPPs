@@ -75,6 +75,12 @@
    - Write a custom copy constructor : Perform a deep copy of the Brain object by creating a new Brain instance and copying the contents of the src.brain
    - Write a custom assignment operator (`operator=`) : Free the existing Brain object before assigning a new one to avoid memory leaks. Perform a deep copy of the Brain object using the copy constructor.
 
+### EX00
+- **virtual** void makeSound() const; for Animal class so the child (declared as an animal) can have their own function
+### EX01
+- deep copy of brain
+
+
 ### EX04
 1. **AMateria**
 	- Pure Virtual Function (clone): any derived class must provide its own implementation of this function. This is because the AMateria class is designed to be an abstract base class, and the clone function is critical for creating a copy of the derived object. Each derived class will have its own specific implementation of clone to ensure the correct type of object is duplicated.
