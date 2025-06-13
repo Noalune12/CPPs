@@ -2,6 +2,7 @@
 #define BUREAUCRAT_H
 
 #include <string>
+#include <exception>
 
 class Bureaucrat {
 
@@ -15,8 +16,9 @@ class Bureaucrat {
 
 		std::string getName() const;
 		int getGrade() const;
-		void incrementGrade(int score);
-		void decrementGrade(int score);
+		void incrementGrade();
+		void decrementGrade();
+
 		class GradeTooHighException : public std::exception {
 			public:
 				virtual const char* what() const throw();
