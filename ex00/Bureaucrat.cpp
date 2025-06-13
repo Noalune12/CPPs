@@ -8,9 +8,9 @@ Bureaucrat::Bureaucrat(): _name("Unknown"), _grade(150) {
 
 Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(grade) {
 	if (grade < 1)
-		throw GradeTooLowException();
-	if (grade > 150)
 		throw GradeTooHighException();
+	if (grade > 150)
+		throw GradeTooLowException();
 	std::cout << "✨ Bureaucrat constructor called ✨" << std::endl;
 }
 
