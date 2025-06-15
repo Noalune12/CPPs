@@ -9,3 +9,4 @@
 	- e.what
 	- try {function() -> the throw is in the function} catch(std::exception& e)
 	- class PEBKACException : public std::exception { public: virtul const char* what() const throw() { return ("PROBLEM") } } -> try {something} catch (PEBKACException&  e) { do something } catch (std::exception& e) { do something else }
+	
