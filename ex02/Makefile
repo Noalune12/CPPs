@@ -1,7 +1,7 @@
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 NAME = Bureaucrat
-SRC = main.cpp Bureaucrat.cpp Form.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
 OBJDIR = objs
 OBJS = $(patsubst %.cpp,$(OBJDIR)/%.o,$(SRC))
 
@@ -10,7 +10,7 @@ all : $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-$(OBJDIR)/%.o: %.cpp Bureaucrat.hpp Form.hpp Makefile
+$(OBJDIR)/%.o: %.cpp Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp Makefile
 	@mkdir -p $(dir $@)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
