@@ -11,14 +11,15 @@
 int main() {
 	try {
 		Bureaucrat charlie("Charlie", 145);
-		ShrubberyCreationForm form1("home");
-		std::cout << form1 << std::endl;
-		charlie.signForm(form1);
-		std::cout << form1 << std::endl;
-		// form1.execute(charlie);
 		Bureaucrat erwan("Erwan", 137);
-		form1.execute(erwan);
-		std::cout << form1 << std::endl;
+		ShrubberyCreationForm form1("home");
+		erwan.executeForm(form1);
+		// std::cout << form1 << std::endl;
+		charlie.signForm(form1);
+		// std::cout << form1 << std::endl;
+		charlie.executeForm(form1);
+		erwan.executeForm(form1);
+		// std::cout << form1 << std::endl;
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
