@@ -3,6 +3,7 @@
 
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 # define YELLOW "\033[1;33m"
 # define BLUE "\033[1;34m"
@@ -20,6 +21,17 @@ int main() {
 		charlie.executeForm(form1);
 		erwan.executeForm(form1);
 		// std::cout << form1 << std::endl;
+		RobotomyRequestForm form2("random");
+		erwan.executeForm(form2);
+		erwan.signForm(form2);
+		for (int i = erwan.getGrade(); i > form2.getSignGrade(); i--)
+			erwan.incrementGrade();
+		std::cout << erwan << std::endl;
+		erwan.signForm(form2);
+		for (int i = charlie.getGrade(); i > form2.getExecuteGrade(); i--)
+			charlie.incrementGrade();
+		std::cout << charlie << std::endl;
+		charlie.executeForm(form2);
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
