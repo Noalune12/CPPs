@@ -52,7 +52,6 @@ int AForm::getExecuteGrade() const {
 
 void AForm::beSigned(Bureaucrat const& name) {
 	if (name.getGrade() > this->getSignGrade()) {
-		std::cout << name.getName() << " couldn’t sign " << this->getName() << " because ";
 		throw GradeTooLowException();
 	}
 	// if (this->getSigned() == true) {
@@ -60,7 +59,6 @@ void AForm::beSigned(Bureaucrat const& name) {
 	// 	return;
 	// }
 	_signed = true;
-	std::cout << name.getName() << " signed " << this->getName() << std::endl;
 }
 
 void AForm::execute(Bureaucrat const & executor) const { // add message
