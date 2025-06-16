@@ -1,7 +1,7 @@
 #include "ShrubberyCreationForm.hpp"
-#include "Bureaucrat.hpp"
 
-#include <iostream>
+#include <fstream>
+#include <exception>
 
 ShrubberyCreationForm::ShrubberyCreationForm(): AForm("Shrubbery Creation Form", 145, 137), _target("Unknown") {
 
@@ -18,13 +18,36 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& src): 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm const& src) {
-    if (this != &src) {
-        AForm::operator=(src);
-        _target = src._target;
-    }
-    return *this;
+	if (this != &src) {
+		AForm::operator=(src);
+		_target = src._target;
+	}
+	return *this;
 }
 
 void ShrubberyCreationForm::executeForm() const {
     // std::cout << executor.getName() << " executed " << getName() << std::endl;
+	// try {
+		std::ofstream outfile((_target + "_shrubbery").c_str());
+		if (!outfile)
+			throw std::ios_base::failure("Fail to open the file");
+		outfile << "           &&& &&  & &&                 \n";
+		outfile << "       && &\\/&\\|& ()|/ @, &&            \n";
+		outfile << "       &\\/(/&/&||/& /_/)_&/_&           \n";
+		outfile << "    &() &\\/&|()|/&\\/ '%\" & ()           \n";
+		outfile << "   &_\\_&&_\\ |& |&&/&__%_/_& &&          \n";
+		outfile << " &&   && & &| &| /& & % ()& /&&         \n";
+		outfile << "  ()&_---()&\\&\\|&&-&&--%---()~          \n";
+		outfile << "     &&     \\||         &&             \n";
+		outfile << "             |||                        \n";
+		outfile << "             |||                        \n";
+		outfile << "             |||                        \n";
+		outfile << "      ______/|||\\_______                \n";
+		outfile << "     |                   |              \n";
+		outfile << "     |___________________|              \n";
+		outfile << "     (_)               (_)              \n";
+	outfile.close();
+	// } catch (const std::exception& e) {
+	// 	std::cout << "Execution failed for " << getName() << " (" << _target << ") : " << e.what() << std::endl;
+	// }
 }

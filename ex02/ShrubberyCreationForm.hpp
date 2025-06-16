@@ -6,19 +6,19 @@
 #include "AForm.hpp"
 
 class ShrubberyCreationForm : public AForm {
-    
-    public:
-        ShrubberyCreationForm();
-        ShrubberyCreationForm(std::string target);
-        ShrubberyCreationForm(ShrubberyCreationForm const& src);
-        ~ShrubberyCreationForm();
 
-        ShrubberyCreationForm& operator=(ShrubberyCreationForm const& src);
+	public:
+		ShrubberyCreationForm();
+		ShrubberyCreationForm(std::string target);
+		ShrubberyCreationForm(ShrubberyCreationForm const& src);
+		~ShrubberyCreationForm();
 
-    	void executeForm() const;
+		ShrubberyCreationForm& operator=(ShrubberyCreationForm const& src);
 
-    private:
-        std::string _target;    
+		void executeForm() const;
+
+	private:
+		std::string _target;
 };
 
 #endif
