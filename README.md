@@ -22,5 +22,26 @@
 	- **Without `srand()`**: The random number generator always starts with the same default seed and the same sequence of numbers every time the program runs will be generated.
 	- **With `srand()`**: We can set a custom seed to control the sequence of random numbers. It is best to use time(0) because its value changes every second.
 
+### EX03
+1. **Pointer to Member Function Syntax**:
+   - `AForm* (Intern::*formCreation[3])(std::string) const` is an array of pointers to member functions of the `Intern` class.
+   - Each member function in this array:
+     - Belongs to the `Intern` class (`Intern::*`).
+     - Takes a single `std::string` parameter (`(std::string)`).
+     - Returns a pointer to an `AForm` object (`AForm*`).
+     - Is marked as `const`, meaning it does not modify the state of the `Intern` object.
+	- **Initialization**:
+		- The array `formCreation` is initialized with the addresses of the member functions:
+     - `this->*formCreation[i]` dereferences the pointer-to-member-function for the current object (`this`).
+2. Why need Inter::
+   - Member functions of a class are tied to an instance of that class. They require an object (or a pointer to an object) to be called because they implicitly operate on the `this` pointer.
+   - When I create a pointer to a member function, I must explicitly specify the class it belongs to. This is why I need to use `Intern::` to indicate that the functions belong to the `Intern` class.
+   - If I was to call the function directly (e.g., `createShrubberyForm`), the compiler would interpret it as a regular function, not a member function of `Intern`. This would result in a compilation error because the function is tied to an instance of the `Intern` class and requires the `this` pointer.
+   - Using `&Intern::createShrubberyForm` explicitly creates a pointer to the member function, which can later be invoked on an instance of `Intern` using the `this` pointer.
+   - A pointer to a member function is not the same as a pointer to a regular function because it needs to account for the `this` pointer.
+   - When we dereference a pointer to a member function (e.g., `(this->*formCreation[i])`), the `this` pointer is automatically passed to the function, allowing it to operate on the correct instance of the class.
+
 ### TODO
-[ ] add copy to sopy operator name
+[ ] add copy to copy operator name
+[ ] check comment to remove
+[ ] put all sources in src and include in inc
