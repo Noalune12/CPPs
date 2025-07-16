@@ -8,7 +8,7 @@ class Bureaucrat {
 
 	public:
 		Bureaucrat();
-		Bureaucrat(std::string name, int grade);
+		Bureaucrat(const std::string name, int grade);
 		Bureaucrat(Bureaucrat const& src);
 		~Bureaucrat();
 
@@ -30,7 +30,7 @@ class Bureaucrat {
 		};
 
 	private:
-		std::string _name;
+		const std::string _name;
 		int _grade;
 };
 

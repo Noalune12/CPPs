@@ -10,7 +10,7 @@ class Form {
 
 	public:
 		Form();
-		Form(std::string name, int sign, int exec);
+		Form(const std::string name, const int sign, const int exec);
 		Form(Form const& src);
 		~Form();
 
@@ -34,10 +34,10 @@ class Form {
 		};
 
 	private:
-		std::string _name;
+		const std::string _name;
 		bool _signed;
-		int _signGrade;
-		int _executeGrade;
+		const int _signGrade;
+		const int _executeGrade;
 };
 
 std::ostream& operator<<(std::ostream& o, Form const& name);

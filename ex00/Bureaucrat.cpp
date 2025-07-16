@@ -6,7 +6,7 @@ Bureaucrat::Bureaucrat(): _name("Unknown"), _grade(150) {
 	std::cout << "✨ Bureaucrat default constructor called ✨" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(grade) {
+Bureaucrat::Bureaucrat(const std::string name, int grade): _name(name), _grade(grade) {
 	if (grade < 1)
 		throw GradeTooHighException();
 	if (grade > 150)
@@ -23,10 +23,8 @@ Bureaucrat::~Bureaucrat() {
 }
 
 Bureaucrat& Bureaucrat::operator=(Bureaucrat const& src) {
-	if (this != &src) {
-		_name = src._name;
+	if (this != &src)
 		_grade = src._grade;
-	}
 	std::cout << "🟰 Bureaucrat operator called 🟰" << std::endl;
 	return *this;
 }

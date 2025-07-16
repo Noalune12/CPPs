@@ -8,17 +8,17 @@
 
 int main() {
 	std::cout << YELLOW << "Wrong grade\n" << RESET << std::endl;
-		try {
-			Bureaucrat charlie("Charlie", -9);
-		} catch (std::exception& e) {
-			std::cout << "Error: " << e.what() << std::endl;
-		}
+	try {
+		Bureaucrat charlie("Charlie", -9);
+	} catch (std::exception& e) {
+		std::cout << "Error: " << e.what() << std::endl;
+	}
 	std::cout << std::endl;
-		try {
-			Bureaucrat charlie("Charlie", 180);
-		} catch (std::exception& e) {
-			std::cout << "Error: " << e.what() << std::endl;
-		}
+	try {
+		Bureaucrat charlie("Charlie", 180);
+	} catch (std::exception& e) {
+		std::cout << "Error: " << e.what() << std::endl;
+	}
 
 	std::cout << YELLOW << "\nOverflow\n" << RESET << std::endl;
 	try {

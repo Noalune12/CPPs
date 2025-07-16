@@ -19,9 +19,9 @@ int main() {
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
+	AForm* form;
 	try {
 		Intern someRandomIntern;
-		AForm* form;
 		Bureaucrat charlie("Charlie", 145);
 		Bureaucrat erwan("Erwan", 137);
 		std::cout << YELLOW << "\nSHRUBBERY CREATION FORM\n" << RESET << std::endl;
@@ -34,7 +34,14 @@ int main() {
 		charlie.executeForm(*form);
 		erwan.executeForm(*form);
 		delete form;
-
+	} catch (std::exception& e) {
+		std::cout << e.what() << std::endl;
+		delete form;
+	}
+	try {
+		Intern someRandomIntern;
+		Bureaucrat charlie("Charlie", 145);
+		Bureaucrat erwan("Erwan", 137);
 		std::cout << YELLOW << "\nROBOTOMY REQUEST FORM\n" << RESET << std::endl;
 		form = someRandomIntern.makeForm("robotomy request", "random");
 		std::cout << *form << "\n" << std::endl;
@@ -49,7 +56,14 @@ int main() {
 		std::cout << "\n" << charlie << "\n" << std::endl;
 		charlie.executeForm(*form);
 		delete form;
-
+	} catch (std::exception& e) {
+		std::cout << e.what() << std::endl;
+		delete form;
+	}
+	try {
+		Intern someRandomIntern;
+		Bureaucrat charlie("Charlie", 145);
+		Bureaucrat erwan("Erwan", 137);
 		std::cout << YELLOW << "\nPRESIDENTIAL PARDON FORM\n" << RESET << std::endl;
 		form = someRandomIntern.makeForm("presidential pardon", "sorry");
 		std::cout << *form << "\n" << std::endl;
@@ -64,8 +78,8 @@ int main() {
 		std::cout << "\n" << erwan << "\n" << std::endl;
 		erwan.executeForm(*form);
 		delete form;
-
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
+		delete form;
 	}
 }

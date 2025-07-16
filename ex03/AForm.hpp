@@ -10,7 +10,7 @@ class AForm {
 
 	public:
 		AForm();
-		AForm(std::string name, int sign, int exec);
+		AForm(const std::string name, const int sign, const int exec);
 		AForm(AForm const& src);
 		virtual ~AForm() = 0;
 
@@ -41,10 +41,10 @@ class AForm {
 		};
 
 	private:
-		std::string _name;
+		const std::string _name;
 		bool _signed;
-		int _signGrade;
-		int _executeGrade;
+		const int _signGrade;
+		const int _executeGrade;
 };
 
 std::ostream& operator<<(std::ostream& o, AForm const& name);

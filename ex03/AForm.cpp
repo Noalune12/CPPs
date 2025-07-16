@@ -7,7 +7,7 @@ AForm::AForm(): _name("Unknown Form"), _signed(false), _signGrade(150), _execute
 	// std::cout << "✨ Form default constructor called ✨" << std::endl;
 }
 
-AForm::AForm(std::string name, int sign, int exec): _name(name), _signed(false), _signGrade(sign), _executeGrade(exec) {
+AForm::AForm(const std::string name, const int sign, const int exec): _name(name), _signed(false), _signGrade(sign), _executeGrade(exec) {
 	if (sign < 1 || exec < 1)
 		throw GradeTooHighException();
 	if (sign > 150 || exec > 150)
@@ -24,12 +24,8 @@ AForm::~AForm() {
 }
 
 AForm& AForm::operator=(AForm const& src) {
-	if (this != &src) {
-		_name = src._name;
+	if (this != &src)
 		_signed = src._signed;
-		_signGrade = src._signGrade;
-		_executeGrade = src._executeGrade;
-	}
 	// std::cout << "🟰 Form operator called 🟰" << std::endl;
 	return *this;
 }
