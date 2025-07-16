@@ -40,8 +40,3 @@
    - Using `&Intern::createShrubberyForm` explicitly creates a pointer to the member function, which can later be invoked on an instance of `Intern` using the `this` pointer.
    - A pointer to a member function is not the same as a pointer to a regular function because it needs to account for the `this` pointer.
    - When we dereference a pointer to a member function (e.g., `(this->*formCreation[i])`), the `this` pointer is automatically passed to the function, allowing it to operate on the correct instance of the class.
-
-### TODO
-[ ] add copy to copy operator name
-[ ] check comment to remove
-[ ] put all sources in src and include in inc
