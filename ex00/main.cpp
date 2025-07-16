@@ -1,5 +1,4 @@
 #include <iostream>
-#include <exception>
 
 #include "Bureaucrat.hpp"
 
@@ -8,7 +7,6 @@
 # define RESET "\033[0m"
 
 int main() {
-	// Wrong grade
 	std::cout << YELLOW << "Wrong grade\n" << RESET << std::endl;
 		try {
 			Bureaucrat charlie("Charlie", -9);
@@ -22,7 +20,6 @@ int main() {
 			std::cout << "Error: " << e.what() << std::endl;
 		}
 
-	// Overflows
 	std::cout << YELLOW << "\nOverflow\n" << RESET << std::endl;
 	try {
 		Bureaucrat charlie("Charlie", 2);

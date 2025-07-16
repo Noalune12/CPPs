@@ -1,5 +1,4 @@
 #include <iostream>
-#include <exception>
 
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -8,7 +7,6 @@
 #include "Intern.hpp"
 
 # define YELLOW "\033[1;33m"
-# define BLUE "\033[1;34m"
 # define RESET "\033[0m"
 
 int main() {

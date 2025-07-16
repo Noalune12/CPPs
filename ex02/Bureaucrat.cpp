@@ -74,7 +74,7 @@ void Bureaucrat::executeForm(AForm const & form) {
 	} catch (const std::ios_base::failure& e) {
 		std::cout << _name << " couldn't execute " << form.getName() << " because of a file error: " << e.what() << std::endl;
 	} catch (const std::exception& e) {
-		std::cout << _name << " couldn't execute " << form.getName() << " because : " << e.what() << std::endl;
+		std::cout << _name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
 

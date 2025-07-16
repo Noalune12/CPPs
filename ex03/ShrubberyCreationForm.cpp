@@ -26,28 +26,23 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 }
 
 void ShrubberyCreationForm::executeForm() const {
-    // std::cout << executor.getName() << " executed " << getName() << std::endl;
-	// try {
-		std::ofstream outfile((_target + "_shrubbery").c_str());
-		if (!outfile)
-			throw std::ios_base::failure("Fail to open the file");
-		outfile << "           &&& &&  & &&                 \n";
-		outfile << "       && &\\/&\\|& ()|/ @, &&            \n";
-		outfile << "       &\\/(/&/&||/& /_/)_&/_&           \n";
-		outfile << "    &() &\\/&|()|/&\\/ '%\" & ()           \n";
-		outfile << "   &_\\_&&_\\ |& |&&/&__%_/_& &&          \n";
-		outfile << " &&   && & &| &| /& & % ()& /&&         \n";
-		outfile << "  ()&_---()&\\&\\|&&-&&--%---()~          \n";
-		outfile << "     &&     \\||         &&             \n";
-		outfile << "             |||                        \n";
-		outfile << "             |||                        \n";
-		outfile << "             |||                        \n";
-		outfile << "      ______/|||\\_______                \n";
-		outfile << "     |                   |              \n";
-		outfile << "     |___________________|              \n";
-		outfile << "     (_)               (_)              \n";
+	std::ofstream outfile((_target + "_shrubbery").c_str());
+	if (!outfile)
+		throw std::ios_base::failure("Fail to open the file");
+	outfile << "           &&& &&  & &&                 \n";
+	outfile << "       && &\\/&\\|& ()|/ @, &&            \n";
+	outfile << "       &\\/(/&/&||/& /_/)_&/_&           \n";
+	outfile << "    &() &\\/&|()|/&\\/ '%\" & ()           \n";
+	outfile << "   &_\\_&&_\\ |& |&&/&__%_/_& &&          \n";
+	outfile << " &&   && & &| &| /& & % ()& /&&         \n";
+	outfile << "  ()&_---()&\\&\\|&&-&&--%---()~          \n";
+	outfile << "     &&     \\||         &&             \n";
+	outfile << "             |||                        \n";
+	outfile << "             |||                        \n";
+	outfile << "             |||                        \n";
+	outfile << "      ______/|||\\_______                \n";
+	outfile << "     |                   |              \n";
+	outfile << "     |___________________|              \n";
+	outfile << "     (_)               (_)              \n";
 	outfile.close();
-	// } catch (const std::exception& e) {
-	// 	std::cout << "Execution failed for " << getName() << " (" << _target << ") : " << e.what() << std::endl;
-	// }
 }

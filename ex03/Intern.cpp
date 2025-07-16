@@ -41,6 +41,4 @@ AForm* Intern::makeForm(std::string name, std::string target) const {
 		}
 	}
 	throw std::runtime_error("Error creating form: " + name + " is not a known category!");
-	// std::cout << "Error creating form: " << name << " is not a known category!" << std::endl;
-	// return (NULL);
 }
